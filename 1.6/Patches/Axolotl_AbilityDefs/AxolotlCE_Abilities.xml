@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    
+    <Operation Class="PatchOperationReplace">
+        
+        <!-- ==================== Plum Blossom Slash (直接发射) ==================== -->
+        
+        <!-- 修改AbilityDef -->
+        <xpath>Defs/AbilityDef[defName="Axolotl_SwordAura_Flower"]/verbProperties</xpath>
+        <value>
+            <verbProperties Class="CombatExtended.VerbPropertiesCE">
+                <verbClass>Verb_CastAbility</verbClass>
+                <range>20</range>
+                <warmupTime>0.8</warmupTime>
+                <soundCast>Axolotl_Sound_LaunchSwordAura</soundCast>
+            </verbProperties>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <!-- 修改投射物 -->
+        <xpath>Defs/ThingDef[defName="Bullet_SwordAura_Flower"]/projectile</xpath>
+        <value>
+            <projectile Class="CombatExtended.ProjectilePropertiesCE">
+                <damageDef>RangedStab</damageDef>
+                <damageAmountBase>15</damageAmountBase>
+                <!-- 这是一个平衡性建议值, 你可以根据需要调整 -->
+                <armorPenetrationSharp>8</armorPenetrationSharp>
+                <armorPenetrationBlunt>12</armorPenetrationBlunt>
+                <speed>90</speed>
+                
+            </projectile>
+        </value>
+    </Operation>
+    
+    
+    
+    <Operation Class="PatchOperationReplace">
+        <!-- ==================== Petal Arrow (由Hediff发射) ==================== -->
+        
+        <!-- 修改投射物 -->
+        <xpath>Defs/ThingDef[defName="Bullet_SwordAura_Flower_Small"]/projectile</xpath>
+        <value>
+            <projectile Class="CombatExtended.ProjectilePropertiesCE">
+                <damageDef>RangedStab</damageDef>
+                <damageAmountBase>2</damageAmountBase>
+                <!-- 这是个小而多的攻击, 穿甲应该较低 -->
+                <armorPenetrationSharp>1.5</armorPenetrationSharp>
+                <armorPenetrationBlunt>2</armorPenetrationBlunt>
+                <speed>90</speed>
+            </projectile>
+        </value>
+        
+    </Operation>
+    
+    <Operation Class="PatchOperationAttributeSet">
+        <!-- 修改所有Axolotl.LotiQiBulletCompProperties_FluctuateDamage为CE修改版 -->
+        <xpath>Defs/ThingDef/comps/li[@Class="Axolotl.LotiQiBulletCompProperties_FluctuateDamage"]</xpath>
+        <attribute>Class</attribute>
+        <value>Axolotl.LotiQiBulletCompProperties_FluctuateDamageCE</value>
+        
+    </Operation>
+        
+</Patch>

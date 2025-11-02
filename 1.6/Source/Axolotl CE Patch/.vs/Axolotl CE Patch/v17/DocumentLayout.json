@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|s:\\rimworld\\rimworld1.6_debug\\mods\\axolotl ce patch\\1.6\\source\\axolotl ce patch\\lotiqibulletcomp_fluctuatedamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|solutionrelative:lotiqibulletcomp_fluctuatedamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|s:\\rimworld\\rimworld1.6_debug\\mods\\axolotl ce patch\\1.6\\source\\axolotl ce patch\\lotiqibulletcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|solutionrelative:lotiqibulletcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|s:\\rimworld\\rimworld1.6_debug\\mods\\axolotl ce patch\\1.6\\source\\axolotl ce patch\\lotiqibulletcompproperties_fluctuatedamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|solutionrelative:lotiqibulletcompproperties_fluctuatedamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|s:\\rimworld\\rimworld1.6_debug\\mods\\axolotl ce patch\\1.6\\source\\axolotl ce patch\\lotiqibullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3283B9FF-5D6D-4A31-9BA6-1EF006E3E8C2}|Axolotl CE Patch.csproj|solutionrelative:lotiqibullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LotiQiBullet.cs",
+              "DocumentMoniker": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBullet.cs",
+              "RelativeDocumentMoniker": "LotiQiBullet.cs",
+              "ToolTip": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBullet.cs",
+              "RelativeToolTip": "LotiQiBullet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T07:17:06.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LotiQiBulletComp.cs",
+              "DocumentMoniker": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBulletComp.cs",
+              "RelativeDocumentMoniker": "LotiQiBulletComp.cs",
+              "ToolTip": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBulletComp.cs",
+              "RelativeToolTip": "LotiQiBulletComp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T07:23:22.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LotiQiBulletComp_FluctuateDamage.cs",
+              "DocumentMoniker": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBulletComp_FluctuateDamage.cs",
+              "RelativeDocumentMoniker": "LotiQiBulletComp_FluctuateDamage.cs",
+              "ToolTip": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBulletComp_FluctuateDamage.cs",
+              "RelativeToolTip": "LotiQiBulletComp_FluctuateDamage.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAiwFAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T01:40:34.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LotiQiBulletCompProperties_FluctuateDamage.cs",
+              "DocumentMoniker": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBulletCompProperties_FluctuateDamage.cs",
+              "RelativeDocumentMoniker": "LotiQiBulletCompProperties_FluctuateDamage.cs",
+              "ToolTip": "S:\\RimWorld\\RimWorld1.6_Debug\\Mods\\Axolotl CE Patch\\1.6\\Source\\Axolotl CE Patch\\LotiQiBulletCompProperties_FluctuateDamage.cs",
+              "RelativeToolTip": "LotiQiBulletCompProperties_FluctuateDamage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T01:37:04.723Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

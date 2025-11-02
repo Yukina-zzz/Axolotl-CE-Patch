@@ -1,0 +1,6 @@
+S:\RimWorld\RimWorld1.6_Debug\Mods\Axolotl CE Patch\1.6\Assemblies\Axolotl CE.dll
+S:\RimWorld\RimWorld1.6_Debug\Mods\Axolotl CE Patch\1.6\Assemblies\Axolotl CE.pdb
+S:\RimWorld\RimWorld1.6_Debug\Mods\Axolotl CE Patch\1.6\Source\Axolotl CE Patch\obj\Debug\Axolotl CE Patch.csproj.AssemblyReference.cache
+S:\RimWorld\RimWorld1.6_Debug\Mods\Axolotl CE Patch\1.6\Source\Axolotl CE Patch\obj\Debug\Axolotl CE Patch.csproj.CoreCompileInputs.cache
+S:\RimWorld\RimWorld1.6_Debug\Mods\Axolotl CE Patch\1.6\Source\Axolotl CE Patch\obj\Debug\Axolotl CE.dll
+S:\RimWorld\RimWorld1.6_Debug\Mods\Axolotl CE Patch\1.6\Source\Axolotl CE Patch\obj\Debug\Axolotl CE.pdb

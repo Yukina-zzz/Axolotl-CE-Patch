@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModMetaData>
+	<name>Axolotl CE Patch</name>
+	<author>Yukina</author>
+	<packageId>Yukina.AxolotlCEPatch</packageId>
+	<supportedVersions>
+		<li>1.6</li>
+    </supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>CETeam.CombatExtended</packageId>
+			<displayName>Combat Extended</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2890901044</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>HenTaiLoliTeam.Axolotl</packageId>
+			<displayName>MoeLotl Race</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3292351432</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>CETeam.CombatExtended</li>
+		<li>HenTaiLoliTeam.Axolotl</li>
+	</loadAfter>
+	<description>
+	</description>
+</ModMetaData>
