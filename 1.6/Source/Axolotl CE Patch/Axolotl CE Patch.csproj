@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AxolotlCE</RootNamespace>
     <AssemblyName>Axolotl CE</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +59,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompProperties_AbilityEffect_InstantChop.cs" />
+    <Compile Include="CompProperties_AbilityRockColumn.cs" />
+    <Compile Include="CompProperties_TargetEffect_ElectromagneticLauncher.cs" />
+    <Compile Include="CompTargetEffect_ElectromagneticLauncher.cs" />
+    <Compile Include="Comp_AbilityEffect_InstantChop.cs" />
+    <Compile Include="Comp_AbilityRockColumn.cs" />
+    <Compile Include="HediffCompProperties_Melt.cs" />
+    <Compile Include="HediffComp_Melt.cs" />
     <Compile Include="LotiQiBullet.cs" />
     <Compile Include="LotiQiBulletComp.cs" />
     <Compile Include="LotiQiBulletCompProperties_FluctuateDamage.cs" />
