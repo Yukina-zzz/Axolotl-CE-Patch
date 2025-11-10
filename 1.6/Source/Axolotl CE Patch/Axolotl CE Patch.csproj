@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AxolotlCE</RootNamespace>
     <AssemblyName>Axolotl CE</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -58,6 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AxolotlCEPatch.cs" />
+    <Compile Include="CompProperties_AbilityEffect_InstantChop.cs" />
+    <Compile Include="CompProperties_AbilityRockColumn.cs" />
+    <Compile Include="CompProperties_TargetEffect_ElectromagneticLauncher.cs" />
+    <Compile Include="CompTargetEffect_ElectromagneticLauncher.cs" />
+    <Compile Include="Comp_AbilityEffect_InstantChop.cs" />
+    <Compile Include="Comp_AbilityRockColumn.cs" />
+    <Compile Include="HediffCompProperties_Melt.cs" />
+    <Compile Include="HediffComp_Melt.cs" />
     <Compile Include="LotiQiBullet.cs" />
     <Compile Include="LotiQiBulletComp.cs" />
     <Compile Include="LotiQiBulletCompProperties_FluctuateDamage.cs" />

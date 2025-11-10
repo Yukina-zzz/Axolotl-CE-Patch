@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    
+    <!--熔甲 + 持续烧伤-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/HediffDef[defName="Axolotl_FlameVermilionBirdMachete_LotiQiMode_Sustain"]/comps/li[@Class="Axolotl.HediffCompProperties_Melt"]</xpath>
+        <value>
+            <li Class="Axolotl.HediffCompProperties_Melt">
+                <baseDamage>3.0</baseDamage>
+                <tickForHit>60</tickForHit>
+                <chanceForBurnEveryHit>0.0</chanceForBurnEveryHit>
+                <heatPerTick>10.0</heatPerTick>
+            </li>
+        </value>
+        
+    </Operation>
+    
+    <!--///缠风剑-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Cut</def>
+                    <amount>5</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Cut</def>
+                    <amount>5</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+
+    <!--///靛霆花-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Cut</def>
+                    <amount>10</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+                <li>
+                    <def>Flame</def>
+                    <amount>5</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Cut</def>
+                    <amount>12.5</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+                <li>
+                    <def>EMP</def>
+                    <amount>10</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+
+    <!--///碧影-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Cut</def>
+                    <amount>1.5</amount>
+                    <armorPenetration>8</armorPenetration>
+                </li>
+                <li>
+                    <def>Cut</def>
+                    <amount>1.5</amount>
+                    <armorPenetration>8</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Cut</def>
+                    <amount>3</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+                <li>
+                    <def>Cut</def>
+                    <amount>3</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+                <li>
+                    <def>Cut</def>
+                    <amount>3</amount>
+                    <armorPenetration>12</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+    
+  <!--///炙夏炎煌-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Flame</def>
+                    <amount>15</amount>
+                    <armorPenetration>500.0</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+        <value>
+            <extraMeleeDamages>
+                <li>
+                    <def>Cut</def>
+                    <amount>15</amount>
+                    <armorPenetration>500.0</armorPenetration>
+                </li>
+            </extraMeleeDamages>
+        </value>
+        
+    </Operation>
+</Patch>
