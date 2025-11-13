@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>
+			Defs
+		</xpath>
+		<value>
+			<ThingDef ParentName="BaseBulletCE" Name="BaseLotlQiSlashCE" Abstract="True">
+				<thingClass>AxolotlCE.LotiQiBulletCE</thingClass>
+			</ThingDef>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>
+			Defs/AbilityDef[
+			defName="Axolotl_SwordAura" or
+			defName="Axolotl_SwordAura_Thunder" or
+			defName="Axolotl_SwordAura_Water" or
+			defName="Axolotl_SwordAura_Fire" or
+			defName="Axolotl_SwordAura_Flower" or
+			defName="Axolotl_SwordAura_Rock"
+			]/comps/li[@Class="Axolotl.CompProperties_AbilityLaunchProjectiles"]
+		</xpath>
+		<value>
+			<compClass>AxolotlCE.CompAbilityLaunchProjectilesCE</compClass>
+		</value>
+	</Operation>
+	
+	<!-- 仙螈斩 -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/AbilityDef[defName="Axolotl_SwordAura_Super"]/comps/li[@Class="Axolotl.CompProperties_AbilitySwordAuraSuper"]</xpath>
+		<value>
+			<li Class="Axolotl.CompProperties_AbilitySwordAuraSuper">
+				<damageTypeToPawn>Cut</damageTypeToPawn>
+				<damAmountToPawn>35</damAmountToPawn>
+				<armorPenetrationToPawn>30</armorPenetrationToPawn>
+				<damageTypeToBuild>Cut</damageTypeToBuild>
+				<damAmountToBuild>30</damAmountToBuild>
+				<armorPenetrationToBuild>100</armorPenetrationToBuild>
+			</li>
+		</value>
+		
+	</Operation>
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>
+			Defs/ThingDef[
+			defName="Bullet_SwordAura" or
+			defName="Bullet_SwordAura_Thunder" or
+			defName="Bullet_SwordAura_Water" or
+			defName="Bullet_SwordAura_Fire" or
+			defName="Bullet_SwordAura_Flower" or
+			defName="Bullet_SwordAura_Rock"
+			]
+		</xpath>
+		<attribute>ParentName</attribute>
+		<value>BaseLotlQiSlashCE</value>
+	</Operation>
+	
+	<!-- ==================== 螈气斩 (基础) ==================== -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>20</damageAmountBase>
+				<speed>50</speed>
+				<armorPenetrationBlunt>15</armorPenetrationBlunt>
+				<armorPenetrationSharp>7</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+			</projectile>
+		</value>
+	</Operation>
+	
+	<!-- ==================== 紫霆斩 (电) ==================== -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Thunder"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>20</damageAmountBase>
+				<speed>50</speed>
+				<extraDamages>
+					<li>
+						<def>EMP</def>
+						<amount>20</amount>
+						<armorPenetration>1.0</armorPenetration>
+						<chance>1.0</chance>
+					</li>
+				</extraDamages>
+				<armorPenetrationBlunt>20</armorPenetrationBlunt>
+				<armorPenetrationSharp>10</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+			</projectile>
+		</value>
+	</Operation>
+	
+	<!-- ==================== 断流击 (水) ==================== -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Water"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>35</damageAmountBase>
+				<speed>50</speed>
+				<armorPenetrationBlunt>20</armorPenetrationBlunt>
+				<armorPenetrationSharp>15</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+			</projectile>
+		</value>
+	</Operation>
+	
+	<!-- ==================== 绝炎刃 (火) ==================== -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Fire"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>35</damageAmountBase>
+				<speed>50</speed>
+				<extraDamages>
+					<li>
+						<def>Flame</def>
+						<amount>20</amount>
+						<armorPenetration>2</armorPenetration>
+						<chance>1.0</chance>
+					</li>
+				</extraDamages>
+				<armorPenetrationBlunt>50</armorPenetrationBlunt>
+				<armorPenetrationSharp>15</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+			</projectile>
+		</value>
+	</Operation>
+	
+	<!-- ==================== 玲珑闪 (花) ==================== -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Flower"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>35</damageAmountBase>
+				<speed>50</speed>
+				<armorPenetrationBlunt>50</armorPenetrationBlunt>
+				<armorPenetrationSharp>15</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+			</projectile>
+		</value>
+	</Operation>
+	
+	<!-- ==================== 花瓣箭 (由"暗香飞渡"技能产生) ==================== -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Flower_Small"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>2</damageAmountBase>
+				<armorPenetrationSharp>1.5</armorPenetrationSharp>
+				<armorPenetrationBlunt>2</armorPenetrationBlunt>
+				<speed>90</speed>
+			</projectile>
+		</value>
+	</Operation>
+
+	<!-- ==================== 碎石散 (岩) ==================== -->
+	<!-- 动画是丢个石头 -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Rock"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>35</damageAmountBase>
+				<speed>50</speed>
+				<armorPenetrationBlunt>80</armorPenetrationBlunt>
+				<armorPenetrationSharp>5</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+			</projectile>
+		</value>
+	</Operation>
+
+	<!-- 石系技能 -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/AbilityDef[defName="Axolotl_Rock_Skill"]/comps/li[@Class="Axolotl.CompProperties_AbilityRockColumn"]</xpath>
+		<value>
+			<li Class="Axolotl.CompProperties_AbilityRockColumnCE">
+				<stunSecPerLevel>0.3</stunSecPerLevel>
+				<stunRangePerLevel>0.5</stunRangePerLevel>
+			</li>
+		</value>
+	</Operation>
+	
+	<!-- 灼炎一闪 -->
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>Defs/AbilityDef/comps/li[@Class="Axolotl.CompProperties_AbilityEffect_InstantChop"]</xpath>
+		<attribute>Class</attribute>
+		<value>Axolotl.CompProperties_AbilityEffect_InstantChopCE</value>
+		
+	</Operation>
+	
+	<!--	<Operation Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Super"]/projectile</xpath>
+						<value>
+						<projectile Class="CombatExtended.ProjectilePropertiesCE">
+						<damageDef>RangedStab</damageDef>
+						<damageAmountBase>50</damageAmountBase>
+						<speed>70</speed>
+						<armorPenetrationBlunt>33</armorPenetrationBlunt>
+						<armorPenetrationSharp>25</armorPenetrationSharp>
+						<castShadow>false</castShadow>
+						</projectile>
+						</value>
+						</Operation>
+						
+	-->
+	
+</Patch>

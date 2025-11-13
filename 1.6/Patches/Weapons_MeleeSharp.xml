@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-
+	
 	<!-- ========== Replace stuff category for crafting ========== 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="Axolotl_Sword" or defName="Axolotl_WindWrappingSword" or defName="Axolotl_IndigoFlower" or defName="Axolotl_Rockforge_Halberd" or defName="Axolotl_Turquoise_shadow" or defName="Axolotl_Flame_VermilionBird_Machete"]/stuffCategories</xpath>
-	</Operation>
--->
+						<Operation Class="PatchOperationRemove">
+						<xpath>Defs/ThingDef[defName="Axolotl_Sword" or defName="Axolotl_WindWrappingSword" or defName="Axolotl_IndigoFlower" or defName="Axolotl_Rockforge_Halberd" or defName="Axolotl_Turquoise_shadow" or defName="Axolotl_Flame_VermilionBird_Machete"]/stuffCategories</xpath>
+						</Operation>
+	-->
 	<!-- ========== Axolotl_Sword ========== -->
-
+	
 	<!-- Patch stats -->
-
+	
 	<!-- 普通剑 -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/tools</xpath>
 		<value>
 			<tools>
-
+				
 				<li Class="CombatExtended.ToolCE">
 					<label>point</label>
 					<capacities>
@@ -38,7 +38,7 @@
 					<armorPenetrationSharp>4.125</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
-					<li Class="CombatExtended.ToolCE">
+				<li Class="CombatExtended.ToolCE">
 					<label>handle</label>
 					<capacities>
 						<li>Poke</li>
@@ -52,7 +52,7 @@
 			</tools>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/statBases</xpath>
 		<value>
@@ -60,7 +60,7 @@
 			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/equippedStatOffsets</xpath>
 		<value>
@@ -69,9 +69,9 @@
 			<MeleeDodgeChance>0.2</MeleeDodgeChance>
 		</value>
 	</Operation>
-
+	
 	<!-- Add tags -->
-
+	
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/weaponTags</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -81,112 +81,18 @@
 			</value>
 		</nomatch>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/weaponTags</xpath>
 		<value>
 			<li>CE_OneHandedWeapon</li>
 		</value>
 	</Operation>
-
-	<!-- ========== Axolotl_IndigoFlower ========== -->
-
-	<!-- Patch stats -->
-
-	<!-- 关刀-->
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/tools</xpath>
-		<value>
-			<tools>
-				
-				<li Class="CombatExtended.ToolCE">
-					<label>point</label>
-					<capacities>
-						<li>Stab</li>
-					</capacities>
-					<power>17</power>
-					<cooldownTime>2.6</cooldownTime>
-					<armorPenetrationBlunt>2.47</armorPenetrationBlunt>
-					<armorPenetrationSharp>12.4</armorPenetrationSharp>
-					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
-					<extraMeleeDamages>
-						<li>
-							<def>EMP</def>
-							<amount>50</amount>
-						</li>
-					</extraMeleeDamages>
-				</li>
-				<li Class="CombatExtended.ToolCE">
-					<label>edge</label>
-					<capacities>
-						<li>Cut</li>
-					</capacities>
-					<power>10</power>
-					<cooldownTime>1.5</cooldownTime>
-					<armorPenetrationBlunt>4.24</armorPenetrationBlunt>
-					<armorPenetrationSharp>9.41</armorPenetrationSharp>
-					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
-					<chanceFactor>1.5</chanceFactor>
-					<extraMeleeDamages>
-						<li>
-							<def>EMP</def>
-							<amount>15</amount>
-						</li>
-					</extraMeleeDamages>
-					<surpriseAttack>
-						<extraMeleeDamages>
-							<li>
-								<def>Cut</def>
-								<amount>40</amount>
-								<armorPenetration>0.75</armorPenetration>
-							</li>
-						</extraMeleeDamages>
-					</surpriseAttack>
-				</li>
-				<li Class="CombatExtended.ToolCE">
-					<label>handle</label>
-					<capacities>
-						<li>Stab</li>
-					</capacities>
-					<power>9</power>
-					<cooldownTime>1.6</cooldownTime>
-					<chanceFactor>0.10</chanceFactor>
-					<armorPenetrationBlunt>8.12</armorPenetrationBlunt>
-					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
-					<extraMeleeDamages>
-						<li>
-							<def>EMP</def>
-							<amount>100</amount>
-						</li>
-					</extraMeleeDamages>
-				</li>
-			</tools>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/statBases</xpath>
-		<value>
-			<Bulk>8</Bulk>
-			<MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]</xpath>
-		<value>
-			<equippedStatOffsets>
-				<MeleeCritChance>0.5</MeleeCritChance>
-				<MeleeParryChance>0.35</MeleeParryChance>
-				<MeleeDodgeChance>0.15</MeleeDodgeChance>
-			</equippedStatOffsets>
-		</value>
-	</Operation>
-
+	
 	<!-- ========== Axolotl_WindWrappingSword ========== -->
-
+	
 	<!-- Patch stats -->
-
+	
 	<!-- 缠风剑 -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/tools</xpath>
@@ -226,11 +132,11 @@
 					<armorPenetrationBlunt>3.12</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
-
+				
 			</tools>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/statBases</xpath>
 		<value>
@@ -238,7 +144,7 @@
 			<MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/equippedStatOffsets</xpath>
 		<value>
@@ -248,11 +154,152 @@
 			<!--Better dodging because of wind?-->
 		</value>
 	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Cut</def>
+					<amount>5</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Cut</def>
+					<amount>5</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
+	
+	<!-- ========== Axolotl_IndigoFlower ========== -->
+	
+	<!-- Patch stats -->
+	
+	<!-- 靛霆花-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/tools</xpath>
+		<value>
+			<tools>
+				
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>17</power>
+					<cooldownTime>2.6</cooldownTime>
+					<armorPenetrationBlunt>2.47</armorPenetrationBlunt>
+					<armorPenetrationSharp>12.4</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>edge</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>10</power>
+					<cooldownTime>1.5</cooldownTime>
+					<armorPenetrationBlunt>4.24</armorPenetrationBlunt>
+					<armorPenetrationSharp>9.41</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+					<chanceFactor>1.5</chanceFactor>
+					<surpriseAttack>
+						<extraMeleeDamages>
+							<li>
+								<def>Cut</def>
+								<amount>40</amount>
+								<armorPenetration>12</armorPenetration>
+							</li>
+						</extraMeleeDamages>
+					</surpriseAttack>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>9</power>
+					<cooldownTime>1.6</cooldownTime>
+					<chanceFactor>0.10</chanceFactor>
+					<armorPenetrationBlunt>8.12</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/statBases</xpath>
+		<value>
+			<Bulk>8</Bulk>
+			<MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>0.5</MeleeCritChance>
+				<MeleeParryChance>0.35</MeleeParryChance>
+				<MeleeDodgeChance>0.15</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Cut</def>
+					<amount>10</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+				<li>
+					<def>Flame</def>
+					<amount>5</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Cut</def>
+					<amount>12.5</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+				<li>
+					<def>EMP</def>
+					<amount>10</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
 
 	<!-- ========== Axolotl_Rockforge_Halberd ========== -->
-
+	
 	<!-- Patch stats -->
-<!-- 戟 -->
+	<!--///磐岩戟-->
+
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_Rockforge_Halberd"]/tools</xpath>
 		<value>
@@ -293,7 +340,7 @@
 			</tools>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Rockforge_Halberd"]/statBases</xpath>
 		<value>
@@ -301,7 +348,7 @@
 			<MeleeCounterParryBonus>1.08</MeleeCounterParryBonus>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Rockforge_Halberd"]/equippedStatOffsets</xpath>
 		<value>
@@ -310,11 +357,11 @@
 			<MeleeDodgeChance>0</MeleeDodgeChance>
 		</value>
 	</Operation>
-
+	
 	<!-- ========== Axolotl_Turquoise_shadow ========== -->
-
+	
 	<!-- Patch stats -->
-<!-- 必应-->
+    <!--///碧影-->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/tools</xpath>
 		<value>
@@ -365,7 +412,7 @@
 			</tools>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/statBases</xpath>
 		<value>
@@ -373,20 +420,20 @@
 			<MeleeCounterParryBonus>0.5</MeleeCounterParryBonus>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/equippedStatOffsets</xpath>
 		<value>
 			<MeleeCritChance>0.5</MeleeCritChance>
 			<MeleeParryChance>0.35</MeleeParryChance>
 			<!--
-			<MeleeDodgeChance>0.45</MeleeDodgeChance>
-		-->
+								<MeleeDodgeChance>0.45</MeleeDodgeChance>
+			-->
 		</value>
 	</Operation>
-
+	
 	<!-- Add tags -->
-
+	
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/weaponTags</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -396,18 +443,60 @@
 			</value>
 		</nomatch>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/weaponTags</xpath>
 		<value>
 			<li>CE_OneHandedWeapon</li>
 		</value>
 	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Cut</def>
+					<amount>1.5</amount>
+					<armorPenetration>8</armorPenetration>
+				</li>
+				<li>
+					<def>Cut</def>
+					<amount>1.5</amount>
+					<armorPenetration>8</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Cut</def>
+					<amount>3</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+				<li>
+					<def>Cut</def>
+					<amount>3</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+				<li>
+					<def>Cut</def>
+					<amount>3</amount>
+					<armorPenetration>12</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
 
 	<!-- ========== Axolotl_Flame_VermilionBird_Machete ========== -->
-
+	
 	<!-- Patch stats -->
-<!-- 炎刀-->
+	<!--///炙夏炎煌-->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/tools</xpath>
 		<value>
@@ -461,7 +550,7 @@
 			</tools>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/statBases</xpath>
 		<value>
@@ -469,7 +558,7 @@
 			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
 		</value>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]</xpath>
 		<value>
@@ -480,9 +569,9 @@
 			</equippedStatOffsets>
 		</value>
 	</Operation>
-
+	
 	<!-- Add tags -->
-
+	
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/weaponTags</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -492,12 +581,39 @@
 			</value>
 		</nomatch>
 	</Operation>
-
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/weaponTags</xpath>
 		<value>
 			<li>CE_OneHandedWeapon</li>
 		</value>
 	</Operation>
-
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Flame</def>
+					<amount>15</amount>
+					<armorPenetration>500.0</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
+		<value>
+			<extraMeleeDamages>
+				<li>
+					<def>Cut</def>
+					<amount>15</amount>
+					<armorPenetration>500.0</armorPenetration>
+				</li>
+			</extraMeleeDamages>
+		</value>
+		
+	</Operation>
+	
 </Patch>

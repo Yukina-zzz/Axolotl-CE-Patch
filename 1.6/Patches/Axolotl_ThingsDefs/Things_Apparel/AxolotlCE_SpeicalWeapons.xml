@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- 轰天雷 -->
+    <!--熔甲 + 持续烧伤-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Axolotl_ElectromagneticLauncher"]/comps/li[@Class="Axolotl.CompProperties_TargetEffect_ElectromagneticLauncher"]</xpath>
+        <value>
+            <li Class="Axolotl.CompProperties_TargetEffect_ElectromagneticLauncherCE">
+                <mainTargetFleckDef>LineEMP</mainTargetFleckDef>
+                <otherTargetFleckDef>LineEMP</otherTargetFleckDef>
+                <DamageToNotMech>
+                    <min>10</min>
+                    <max>20</max>
+                </DamageToNotMech>
+                <DamageToMech>
+                    <min>1</min>
+                    <max>6</max>
+                </DamageToMech>
+            </li>
+        </value>
+        
+    </Operation>
+</Patch>

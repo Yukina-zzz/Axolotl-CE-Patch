@@ -74,3 +74,7 @@ NPEs show up when quiting draft of pawns who doing qi-ed shoots. Can't fix that.
 Busy working life, i can not make update of this mod in time.
 
 
+by Yukina
+20251114
+兼容了下暗香飞渡,灼炎一闪，石螈技能,仙螈斩,轰天雷,百花印的穿透
+修复螈气模式近战的格外伤害使其能正常工作并适配穿透

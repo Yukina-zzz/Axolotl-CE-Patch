@@ -16,7 +16,7 @@ namespace AxolotlCE;
 
 public class CompAbilityLaunchProjectilesCE : CompAbilityEffect
 {
-  public CompProperties_AbilityLaunchProjectiles Props
+  public new CompProperties_AbilityLaunchProjectiles Props
   {
     get => (CompProperties_AbilityLaunchProjectiles) this.props;
   }

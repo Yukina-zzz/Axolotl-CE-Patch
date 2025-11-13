@@ -14,11 +14,11 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,12 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AxolotlCEPatch.cs" />
     <Compile Include="BulletWithToxicCE.cs" />
     <Compile Include="CompAbilityLaunchProjectilesCE.cs" />
+    <Compile Include="Ability\AbilityEffect\AbilityEffect_InstantChop\CompProperties_AbilityEffect_InstantChop.cs" />
+    <Compile Include="Ability\AbilityEffect\AbilityEffect_Skill\AbilityEffect_Rock\AbilityEffect\CompProperties_AbilityRockColumn.cs" />
+    <Compile Include="Ability\AbilityEffect\AbilityEffect_InstantChop\Comp_AbilityEffect_InstantChop.cs" />
+    <Compile Include="Ability\AbilityEffect\AbilityEffect_Skill\AbilityEffect_Rock\AbilityEffect\Comp_AbilityRockColumn.cs" />
     <Compile Include="EXM_Bullet.cs" />
     <Compile Include="LotiQiBulletCE.cs" />
     <Compile Include="RMCE_AntiZombieBullet.cs" />
     <Compile Include="RMCE_AntiZombieBullet_Qied.cs" />
+    <Compile Include="Thing\ThingComp\ThingComp_Apparel\ThingComp_SpeicalWeapon\ElectromagneticLauncher\CompProperties_TargetEffect_ElectromagneticLauncher.cs" />
+    <Compile Include="Thing\ThingComp\ThingComp_Apparel\ThingComp_SpeicalWeapon\ElectromagneticLauncher\CompTargetEffect_ElectromagneticLauncher.cs" />
     <Compile Include="Verb_IncanationCrossbowIntensifyShotCE.cs" />
     <Compile Include="Verb_LotiIntensifyShotCE.cs" />
     <Compile Include="ModExt_QiProjectile.cs" />
@@ -47,23 +54,31 @@
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\libs\Assembly-CSharp.dll</HintPath>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="Axolotl">
-      <HintPath>..\..\libs\Axolotl.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Axolotl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3292351432\1.6\Assemblies\Axolotl.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="CombatExtended">
-      <HintPath>..\..\libs\CombatExtended.dll</HintPath>
+      <HintPath>..\..\..\..\2890901044\Assemblies\CombatExtended.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="RigorMortis">
-      <HintPath>..\..\libs\RigorMortis.dll</HintPath>
+      <HintPath>..\..\..\..\3454053400\1.6\Assemblies\RigorMortis.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="RigorMortis.Crimson">
-      <HintPath>..\..\libs\RigorMortis.Crimson.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\libs\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
