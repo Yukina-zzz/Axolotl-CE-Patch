@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>MoeLotl_CE_Crossbow_Int</defName>
+		<label>crossbow bolts</label>
+		<ammoTypes>
+			<Ammo_CrossbowBolt_Stone>MoeLotl_CE_CrossbowBoltInt_Stone</Ammo_CrossbowBolt_Stone>
+			<Ammo_CrossbowBolt_Steel>MoeLotl_CE_CrossbowBoltInt_Steel</Ammo_CrossbowBolt_Steel>
+			<Ammo_CrossbowBolt_Plasteel>MoeLotl_CE_CrossbowBoltInt_Plasteel</Ammo_CrossbowBolt_Plasteel>
+			<Ammo_CrossbowBolt_Venom>MoeLotl_CE_CrossbowBoltInt_Venom</Ammo_CrossbowBolt_Venom>
+			<Ammo_CrossbowBolt_Flame>MoeLotl_CE_CrossbowBoltInt_Flame</Ammo_CrossbowBolt_Flame>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<!-- The amount of arrows usable over the ammo lifetime for each resource cost is equal to
+		[r / (1 - x)];
+			x = preExplosionSpawnChance,
+			r = resource cost. -->
+
+	<ThingDef ParentName="BaseCrossbowBoltProjectile" Name="BaseMoeLotlCorssbowBoltInt" Abstract="true">
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>45</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMoeLotlCorssbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_Stone</defName>
+		<label>crossbow bolt (stone)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Stone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>12</damageAmountBase>
+			<armorPenetrationBlunt>4</armorPenetrationBlunt>
+			<armorPenetrationSharp>2</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.1</preExplosionSpawnChance>
+			<!-- 11.11 bolts per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Stone</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBoltInt_StoneQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMoeLotlCorssbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_Steel</defName>
+		<label>crossbow bolt (steel)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Steel</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBlunt>9</armorPenetrationBlunt>
+			<armorPenetrationSharp>3.5</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.333</preExplosionSpawnChance>
+			<!-- 14.99 bolts per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Steel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBoltInt_SteelQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMoeLotlCorssbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_Plasteel</defName>
+		<label>crossbow bolt (plasteel)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Plasteel</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>11</damageAmountBase>
+			<armorPenetrationBlunt>9</armorPenetrationBlunt>
+			<armorPenetrationSharp>5</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<!-- 25 bolts per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Plasteel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBoltInt_PlasteelQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMoeLotlCorssbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_Venom</defName>
+		<label>crossbow bolt (venom)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Venom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>ArrowVenom</damageDef>
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBlunt>9</armorPenetrationBlunt>
+			<armorPenetrationSharp>3.5</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<!-- 25 arrows per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Steel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBoltInt_VenomQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseMoeLotlCorssbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_Flame</defName>
+		<label>crossbow bolt (flame)</label>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Flame</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<explosionRadius>0.9</explosionRadius>
+			<damageDef>ArrowFire</damageDef>
+			<damageAmountBase>7</damageAmountBase>
+			<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>0.16</preExplosionSpawnChance>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBoltInt_FlameQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--================== Qi-ed projectiles ==================-->
+
+	<ThingDef ParentName="BaseQiCorssbowBolt" Name="BaseQiCrossbowBoltInt" Abstract="true">
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>45</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCrossbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_StoneQ</defName>
+		<label>crossbow bolt (stone)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>16</damageAmountBase>
+			<armorPenetrationBlunt>4</armorPenetrationBlunt>
+			<armorPenetrationSharp>4</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCrossbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_SteelQ</defName>
+		<label>crossbow bolt (steel)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBlunt>9</armorPenetrationBlunt>
+			<armorPenetrationSharp>7</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCrossbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_PlasteelQ</defName>
+		<label>crossbow bolt (plasteel)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationBlunt>9</armorPenetrationBlunt>
+			<armorPenetrationSharp>10</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCrossbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_VenomQ</defName>
+		<label>crossbow bolt (venom)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>ArrowVenom</damageDef>
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBlunt>9</armorPenetrationBlunt>
+			<armorPenetrationSharp>7</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCrossbowBoltInt">
+		<defName>MoeLotl_CE_CrossbowBoltInt_FlameQ</defName>
+		<label>crossbow bolt (flame)</label>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<explosionRadius>0.9</explosionRadius>
+			<damageDef>ArrowFire</damageDef>
+			<damageAmountBase>25</damageAmountBase>
+			<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>0.16</preExplosionSpawnChance>
+		</projectile>
+	</ThingDef>
+</Defs>

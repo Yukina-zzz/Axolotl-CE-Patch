@@ -1,28 +1,38 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Axolotl CE Patch</name>
-	<author>Yukina</author>
-	<packageId>Yukina.AxolotlCEPatch</packageId>
+	<name>MoeLotl CE 1.6(Forked)</name>
+	<author>VVV</author>
+	<packageId>NotHenTai.Axolotl.CEforked</packageId>
+	<description>
+		萌螈CE1.6 临时版
+		Moelotl CE 1.6 Temporal forked
+		for 20250922MoeLotl
+		如有接手请联系
+		This Mod Seek adoption
+	</description>
+	<modIconPath IgnoreIfNoMatchingField="True">Axolotl_Icon/Axolotl_MainIcon</modIconPath>
 	<supportedVersions>
 		<li>1.6</li>
-    </supportedVersions>
+	</supportedVersions>
 	<modDependencies>
 		<li>
-			<packageId>CETeam.CombatExtended</packageId>
-			<displayName>Combat Extended</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2890901044</steamWorkshopUrl>
+			<packageId>hentailoliteam.axolotl</packageId>
+			<displayName>Moelotl Race</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3292351432</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>HenTaiLoliTeam.Axolotl</packageId>
-			<displayName>MoeLotl Race</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3292351432</steamWorkshopUrl>
+			<packageId>ceteam.combatextended</packageId>
+			<displayName>Combat Extended</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044</steamWorkshopUrl>
 		</li>
 	</modDependencies>
 	<loadAfter>
-		<li>CETeam.CombatExtended</li>
-		<li>HenTaiLoliTeam.Axolotl</li>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+		<li>erdelf.HumanoidAlienRaces</li>
+		<li>hentailoliteam.axolotl</li>
 	</loadAfter>
-	<description>
-		for 20250922.MoeLotl
-	</description>
 </ModMetaData>

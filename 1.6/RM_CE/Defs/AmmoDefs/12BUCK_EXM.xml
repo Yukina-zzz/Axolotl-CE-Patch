@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <!-- 12gague buckshot 退魔-->
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeBase">
+		<defName>Ammo_12Gauge_Buck_EXM</defName>
+		<label>12 gauge shell (Buck_EXM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Shotgun/Shot</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Exorcism</ammoClass>
+		<cookOffProjectile>Bullet_12Gauge_Buck_EXM</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base12GaugeBullet">
+		<defName>Bullet_12Gauge_Buck_EXM</defName>
+		<label>buckshot pellet</label>
+		<thingClass>AxolotlCE.EXM_bullet</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Shotgun_Pellet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>8</damageAmountBase>
+			<pelletCount>9</pelletCount>
+			<armorPenetrationSharp>4</armorPenetrationSharp>
+			<armorPenetrationBlunt>4.52</armorPenetrationBlunt>
+			<spreadMult>8.9</spreadMult>
+		</projectile>
+	</ThingDef>
+
+    <RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_12Gauge_Buck_EXM</defName>
+		<label>make 12 gauge (Buck_EXM) shell x200</label>
+		<description>Craft 200 12 gauge (Buck_EXM) shells.</description>
+		<jobString>Making 12 gauge (Buck_EXM) shells.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>22</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Gold</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Silver</li>
+				<li>Gold</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_12Gauge_Buck_EXM>200</Ammo_12Gauge_Buck_EXM>
+		</products>
+		<workAmount>2200</workAmount>
+	</RecipeDef>
+
+</Defs>

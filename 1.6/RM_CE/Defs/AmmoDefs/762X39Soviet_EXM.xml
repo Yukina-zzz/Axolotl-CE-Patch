@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <!-- 7.62x39 Soviet 退魔-->
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="762x39mmSovietBase">
+		<defName>Ammo_762x39mmSoviet_EXM</defName>
+		<label>7.62x39mm Soviet (EXM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/SovietLarge/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Exorcism</ammoClass>
+		<cookOffProjectile>Bullet_762x39mmSoviet_EXM</cookOffProjectile>
+	</ThingDef>
+
+    <ThingDef ParentName="Base762x39mmSovietBullet">
+		<defName>Bullet_762x39mmSoviet_EXM</defName>
+		<label>7.62mm Soviet bullet (EXM)</label>
+		<thingClass>AxolotlCE.EXM_bullet</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationSharp>5.2</armorPenetrationSharp>
+			<armorPenetrationBlunt>39.08</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+    <RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_762x39mmSoviet_EXM</defName>
+		<label>make 7.62x39mm Soviet (EXM) cartridge x500</label>
+		<description>Craft 500 7.62x39mm Soviet (EXM) cartridges.</description>
+		<jobString>Making 7.62x39mm Soviet (EXM) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>18</count>
+			</li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+            </li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Gold</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+            </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Silver</li>
+				<li>Gold</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_762x39mmSoviet_EXM>500</Ammo_762x39mmSoviet_EXM>
+		</products>
+		<workAmount>1800</workAmount>
+	</RecipeDef>
+
+</Defs>

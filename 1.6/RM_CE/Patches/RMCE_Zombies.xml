@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <!-- 紫小僵 布衣-->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/MutantDef[defName="RM_PurpleZombie"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+                    <label>teeth</label>
+                    <capacities>
+                        <li>Bite</li>
+                    </capacities>
+                    <power>6</power>
+                    <cooldownTime>3</cooldownTime>
+                    <armorPenetrationBlunt>0.2</armorPenetrationBlunt>
+                    <armorPenetrationSharp>2.4</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                    <chanceFactor>0.5</chanceFactor>
+                    <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>left claw</label>
+                    
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>5.0</power>
+                    <cooldownTime>2</cooldownTime>
+                    <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+                    <armorPenetrationSharp>3</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>right claw</label>
+                    
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>5.0</power>
+                    <cooldownTime>2</cooldownTime>
+                    <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+                    <armorPenetrationSharp>3</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+			</tools>
+		</value>
+	</Operation>
+
+    <!-- 白僵 皮甲-->
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/MutantDef[defName="RM_WhiteZombie"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+                    <label>teeth</label>
+                    <capacities>
+                        <li>Bite</li>
+                    </capacities>
+                    <power>10</power>
+                    <cooldownTime>2</cooldownTime>
+                    <armorPenetrationBlunt>3</armorPenetrationBlunt>
+                    <armorPenetrationSharp>9</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                    <chanceFactor>0.5</chanceFactor>
+                    <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>left claw</label>
+                    <labelNoLocation>claw</labelNoLocation>
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>8</power>
+                    <cooldownTime>2</cooldownTime>
+                    <armorPenetrationBlunt>8.2</armorPenetrationBlunt>
+                    <armorPenetrationSharp>6</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>right claw</label>
+                    <labelNoLocation>claw</labelNoLocation>
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>8</power>
+                    <cooldownTime>2</cooldownTime>
+                    <armorPenetrationBlunt>8.2</armorPenetrationBlunt>
+                    <armorPenetrationSharp>6</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+			</tools>
+		</value>
+	</Operation>
+
+    <!-- 绿僵 板甲 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/MutantDef[defName="RM_GreenZombie"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+                    <label>teeth</label>
+                    <capacities>
+                        <li>Bite</li>
+                    </capacities>
+                    <power>10</power>
+                    <cooldownTime>1</cooldownTime>
+                    <armorPenetrationBlunt>8</armorPenetrationBlunt>
+                    <armorPenetrationSharp>19.5</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                    <chanceFactor>0.5</chanceFactor>
+                    <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>left claw</label>
+                    <labelNoLocation>claw</labelNoLocation>
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>10</power>
+                    <cooldownTime>1</cooldownTime>
+                    <armorPenetrationBlunt>18.2</armorPenetrationBlunt>
+                    <armorPenetrationSharp>14</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>right claw</label>
+                    <labelNoLocation>claw</labelNoLocation>
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>10</power>
+                    <cooldownTime>1</cooldownTime>
+                    <armorPenetrationBlunt>18.2</armorPenetrationBlunt>
+                    <armorPenetrationSharp>14</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+			</tools>
+		</value>
+	</Operation>
+
+    <!-- 毛僵 斥候 -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/MutantDef[defName="RM_BeastlyZombie"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+                    <label>teeth</label>
+                    <capacities>
+                        <li>Bite</li>
+                    </capacities>
+                    <power>24</power>
+                    <cooldownTime>0.8</cooldownTime>
+                    <armorPenetrationBlunt>35</armorPenetrationBlunt>
+                    <armorPenetrationSharp>20</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                    <chanceFactor>0.5</chanceFactor>
+                    <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>left claw</label>
+                    <labelNoLocation>claw</labelNoLocation>
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>18</power>
+                    <cooldownTime>0.8</cooldownTime>
+                    <armorPenetrationBlunt>75</armorPenetrationBlunt>
+                    <armorPenetrationSharp>18</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>right claw</label>
+                    <labelNoLocation>claw</labelNoLocation>
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>18</power>
+                    <cooldownTime>0.8</cooldownTime>
+                    <armorPenetrationBlunt>75</armorPenetrationBlunt>
+                    <armorPenetrationSharp>18</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+			</tools>
+		</value>
+	</Operation>
+
+    <!-- 飞天毛台 骑士-->
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/MutantDef[defName="RM_FlyingZombie"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+                    <label>teeth</label>
+                    <capacities>
+                        <li>Bite</li>
+                    </capacities>
+                    <power>36</power>
+                    <cooldownTime>0.6</cooldownTime>
+                    <armorPenetrationBlunt>150</armorPenetrationBlunt>
+                    <armorPenetrationSharp>60</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                    <chanceFactor>0.5</chanceFactor>
+                    <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>left claw</label>
+                    
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>24</power>
+                    <cooldownTime>0.6</cooldownTime>
+                    <armorPenetrationBlunt>120</armorPenetrationBlunt>
+                    <armorPenetrationSharp>40</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+                <li Class="CombatExtended.ToolCE">
+                    <label>right claw</label>
+                    
+                    <capacities>
+                        <li>Scratch</li>
+                    </capacities>
+                    <power>24</power>
+                    <cooldownTime>0.6</cooldownTime>
+                    <armorPenetrationBlunt>120</armorPenetrationBlunt>
+                    <armorPenetrationSharp>40</armorPenetrationSharp>
+                    <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                    <chanceFactor>1.5</chanceFactor>
+                    <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                    <soundMeleeHit>Axolotl_Zombie_Scratch</soundMeleeHit>
+                    <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+                </li>
+			</tools>
+		</value>
+	</Operation>
+
+</Patch>

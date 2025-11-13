@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<!-- EN: Projectile stat used when infused with Qi. -->
+  <QiWeaponExplanation>使用螈气时的武器投射物数值：</QiWeaponExplanation>
+	<!-- EN: Qi weapon stat -->
+  <QiWeaponStatLabel>螈气状态数值</QiWeaponStatLabel>
+</LanguageData>

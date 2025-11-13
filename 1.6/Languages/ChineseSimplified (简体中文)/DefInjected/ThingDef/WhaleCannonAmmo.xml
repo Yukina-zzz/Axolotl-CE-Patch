@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Celestial Whale Cannon Arrow (HE) -->
+  <Ammo_Axolotl_WhaleCannonAmmo_HE.label>云鲸矢</Ammo_Axolotl_WhaleCannonAmmo_HE.label>
+  <!-- EN: Specialized ammo designed to be fired from the Celestial Whale Cannon. -->
+  <Ammo_Axolotl_WhaleCannonAmmo_HE.description>瀚海云鲸炮使用的特制投射物</Ammo_Axolotl_WhaleCannonAmmo_HE.description>
+  
+  <!-- EN: Celestial Whale Cannon Arrow (HE) -->
+  <Bullet_Axolotl_WhaleCannonAmmo_HE.label>云鲸矢</Bullet_Axolotl_WhaleCannonAmmo_HE.label>
+  
+</LanguageData>

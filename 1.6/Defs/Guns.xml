@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<CombatExtended.AmmoSetDef>
+		<defName>Ammoset_AxolotlGun</defName>
+		<label>Platinum Musket</label>
+		<ammoTypes>
+			<Ammo_MusketBall>Bullet_AxolotlMusketBall</Ammo_MusketBall>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- 白金 普通弹-->
+
+	<ThingDef ParentName="MusketBallBullet">
+		<defName>Bullet_AxolotlMusketBall</defName>
+		<label>musket ball</label>
+		<graphicData>
+			<texPath>Axolotl_Weapons/bullet_Axolotl_BlackGoldFirearm</texPath>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>98</speed>
+			<damageAmountBase>30</damageAmountBase>
+			<armorPenetrationSharp>10</armorPenetrationSharp>
+			<armorPenetrationBlunt>185.8</armorPenetrationBlunt>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>Bullet_AxolotlMusketBallQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- 白金铳 强化弹-->
+
+	<ThingDef ParentName="MusketBallBullet">
+		<defName>Bullet_AxolotlMusketBallQ</defName>
+		<label>musket ball</label>
+		<thingClass>AxolotlCE.LotiQiBulletCE</thingClass>
+		<graphicData>
+			<texPath>Axolotl_Weapons/bullet_Axolotl_PlatinumFirearm_Q</texPath>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>98</speed>
+			<damageAmountBase>45</damageAmountBase>
+			<armorPenetrationSharp>16</armorPenetrationSharp>
+			<armorPenetrationBlunt>245.5</armorPenetrationBlunt>
+		</projectile>
+		<comps>
+			<li Class="Axolotl.LotiQiBulletCompProperties_PlatinumFirearm" />
+		</comps>
+	</ThingDef>
+
+
+
+	<CombatExtended.AmmoSetDef>
+		<defName>Ammoset_AxolotlGrapeshot</defName>
+		<label>Black Gold Musket</label>
+		<ammoTypes>
+			<Ammo_MiniCannonBall_Grape>Bullet_AxolotlGrapeShot</Ammo_MiniCannonBall_Grape>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<ThingDef ParentName="BaseBulletCE">
+		<defName>Bullet_AxolotlGrapeShot</defName>
+		<label>mini grape shot</label>
+		<graphicData>
+			<texPath>Axolotl_Ammo/GrapeShot/GrapeShotProj</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<speed>73</speed>
+			<damageAmountBase>15</damageAmountBase>
+			<pelletCount>10</pelletCount>
+			<armorPenetrationSharp>6</armorPenetrationSharp>
+			<armorPenetrationBlunt>30.7</armorPenetrationBlunt>
+			<spreadMult>17.8</spreadMult>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>Bullet_AxolotlGrapeShotQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBulletCE">
+		<defName>Bullet_AxolotlGrapeShotQ</defName>
+		<label>mini grape shot</label>
+		<thingClass>AxolotlCE.LotiQiBulletCE</thingClass>
+		<graphicData>
+			<texPath>Axolotl_Ammo/GrapeShot/GrapeShotQiProj</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<speed>73</speed>
+			<damageAmountBase>18</damageAmountBase>
+			<pelletCount>10</pelletCount>
+			<armorPenetrationSharp>8</armorPenetrationSharp>
+			<armorPenetrationBlunt>70</armorPenetrationBlunt>
+			<spreadMult>17.8</spreadMult>
+		</projectile>
+		<comps>
+			<li Class="Axolotl.LotiQiBulletCompProperties_BlackGoldFirearm" />
+		</comps>
+	</ThingDef>
+</Defs>

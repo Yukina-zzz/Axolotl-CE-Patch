@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>Repeat_Crossbow</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>RC_se</clipPath>
+          </li>
+        </grains>
+        <pitchRange>1.0~1.2</pitchRange>
+        <volumeRange>45~55</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

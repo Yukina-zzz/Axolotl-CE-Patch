@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/AbilityDef[defName="Axolotl_SwordAura_Blood"]/comps/li[@Class="Axolotl.CompProperties_AbilityLaunchProjectiles"]</xpath>
+		<value>
+			<compClass>AxolotlCE.CompAbilityLaunchProjectilesCE</compClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Blood"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>20</damageAmountBase>
+				<speed>55</speed>
+				<armorPenetrationBlunt>15</armorPenetrationBlunt>
+				<armorPenetrationSharp>18</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+				<extraDamages>
+					<li> 
+						<def>Axolotl_TearingCutRanged</def>
+						<amount>2.5</amount>
+						<armorPenetration>18</armorPenetration>
+					</li>
+					<li>
+						<def>Axolotl_TearingCutRanged</def>
+						<amount>2.5</amount>
+						<armorPenetration>18</armorPenetration>
+					</li>
+					<li>
+						<def>Axolotl_TearingCutRanged</def>
+						<amount>2.5</amount>
+						<armorPenetration>18</armorPenetration>
+					</li>
+				</extraDamages>
+			</projectile>
+		</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura_Blood"]/comps/li[@Class="Axolotl.FactionExpand.CompProperties_LotlQiSlash_ExtraDamage"]</xpath>
+	</Operation>
+</Patch>

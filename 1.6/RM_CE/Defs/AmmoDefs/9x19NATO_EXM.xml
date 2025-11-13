@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <!-- 9x19para 退魔-->
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="9x19mmParaBase">
+		<defName>Ammo_9x19mmPara_EXM</defName>
+		<label>9x19mm Para (EXM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Pistol/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Exorcism</ammoClass>
+		<cookOffProjectile>Bullet_9x19mmPara_EXM</cookOffProjectile>
+	</ThingDef>
+
+    <ThingDef ParentName="Base9x19mmParaBullet">
+		<defName>Bullet_9x19mmPara_EXM</defName>
+		<label>9mm Para bullet (EXM)</label>
+		<thingClass>AxolotlCE.EXM_bullet</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>10</damageAmountBase>
+			<armorPenetrationSharp>3.7</armorPenetrationSharp>
+			<armorPenetrationBlunt>9.42</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+    <RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_9x19mmPara_EXM</defName>
+		<label>make 9x19mm Parabellum (EXM) cartridge x500</label>
+		<description>Craft 500 9x19mm Parabellum (EXM) cartridges.</description>
+		<jobString>Making 9x19mm Parabellum (EXM) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>14</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Gold</li>
+					</thingDefs>
+				</filter>
+				<count>0.5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Silver</li>
+				<li>Gold</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_9x19mmPara_EXM>500</Ammo_9x19mmPara_EXM>
+		</products>
+		<workAmount>1400</workAmount>
+	</RecipeDef>
+
+</Defs>

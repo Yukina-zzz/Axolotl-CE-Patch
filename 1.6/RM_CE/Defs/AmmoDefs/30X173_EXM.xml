@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <!-- 30X173NATO 退魔-->
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo30x173mmNATOBase">
+		<defName>Ammo_30x173mmNATO_EXM</defName>
+		<label>30x173mm NATO (EXM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Exorcism</ammoClass>
+		<cookOffProjectile>Bullet_30x173mmNATO_EXM</cookOffProjectile>
+	</ThingDef>
+
+    <ThingDef ParentName="Base30x173mmNATOBullet">
+		<defName>Bullet_30x173mmNATO_EXM</defName>
+		<label>30x173mm NATO bullet (EXM)</label>
+		<thingClass>AxolotlCE.EXM_bullet</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>79</damageAmountBase>
+			<armorPenetrationSharp>69.94</armorPenetrationSharp>
+			<armorPenetrationBlunt>3412.510</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+    <RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_30x173mmNATO_EXM</defName>
+		<label>make 30x173mm NATO (EXM) cartridge x100</label>
+		<description>Craft 100 30x173mm NATO (EXM) cartridges.</description>
+		<jobString>Making 30x173mm NATO (EXM) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>168</count>
+			</li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+            </li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Gold</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+            </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Silver</li>
+				<li>Gold</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_30x173mmNATO_EXM>100</Ammo_30x173mmNATO_EXM>
+		</products>
+		<workAmount>20160</workAmount>
+	</RecipeDef>
+
+</Defs>

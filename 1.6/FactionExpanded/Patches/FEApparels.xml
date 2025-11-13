@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_GarbOfRebirth"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_GarbOfRebirth"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>3</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_ScarletGarment"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_ScarletGarment"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>8</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Nine-hellRobe"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>3</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Nine-hellRobe"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>3</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_VeilOfWorldsApart"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>2</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_VeilOfWorldsApart"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>6</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Axolotl_VeilOfWorldsApart"]/equippedStatOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Axolotl_VeilOfWorldsApart"]</xpath>
+			<value>
+				<equippedStatOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_VeilOfWorldsApart"]/equippedStatOffsets</xpath>
+		<value>
+			<Suppressability>-0.25</Suppressability>
+		</value>
+	</Operation>
+
+<!-- 血眸 远程用头盔-->
+ 	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Crimson-EyeVeil"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>5</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Crimson-EyeVeil"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>9</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_Crimson-EyeVeil"]/equippedStatOffsets</xpath>
+		<value>
+			<AimingAccuracy>0.2</AimingAccuracy>
+		</value>
+	</Operation>
+
+	<!-- 泣魂长衣 远程用灵衣-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_WeepingSpecterRobe"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>8</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_WeepingSpecterRobe"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>11</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_WeepingSpecterRobe"]/equippedStatOffsets</xpath>
+		<value>
+			<ReloadSpeed>0.25</ReloadSpeed>
+		</value>
+	</Operation>
+
+	<!-- 饕餮面 铁 玻璃钢 蘑菇布-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_All-DevouringMask"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>16</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_All-DevouringMask"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>42</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<!-- 饕餮甲 铁 玻璃钢 蘑菇布-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_TaotieWarplate"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>22</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_TaotieWarplate"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>45</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_TaotieWarplate"]/equippedStatOffsets</xpath>
+		<value>
+			<MoveSpeed>0.3</MoveSpeed>
+		</value>
+	</Operation>
+
+</Patch>

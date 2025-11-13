@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <!-- .50CAL 退魔-->
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo50BMGBase">
+		<defName>Ammo_50BMG_EXM</defName>
+		<label>.50 BMG (EXM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Exorcism</ammoClass>
+		<cookOffProjectile>Bullet_50BMG_EXM</cookOffProjectile>
+	</ThingDef>
+
+    <ThingDef ParentName="Base50BMGBullet">
+		<defName>Bullet_50BMG_EXM</defName>
+		<label>.50 BMG bullet (EXM)</label>
+		<thingClass>AxolotlCE.EXM_bullet</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>40</damageAmountBase>
+			<armorPenetrationSharp>13.4</armorPenetrationSharp>
+			<armorPenetrationBlunt>358.34</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+    <RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_50BMG_EXM</defName>
+		<label>make .50 BMG (EXM) cartridge x200</label>
+		<description>Craft 200 .50 BMG (EXM) cartridges.</description>
+		<jobString>Making .50 BMG (EXM) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+            </li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Gold</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+            </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Silver</li>
+				<li>Gold</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_50BMG_EXM>200</Ammo_50BMG_EXM>
+		</products>
+		<workAmount>5000</workAmount>
+	</RecipeDef>
+
+</Defs>

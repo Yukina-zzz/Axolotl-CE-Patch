@@ -1,0 +1,76 @@
+该MOD在3HST制作的原MOD为基础上修改制作而来，
+
+This mod is based on 3HST's original mod.
+I just fork ,fix and reupload it.
+
+
+如有接手该MOD的意愿，请联系我。
+This Mod seeks adoption.
+
+1. 缝补 Weapons_MeleeSharp.xml  Weapons_MeleeBlunt.xml 
+补全CE兼容，上调萌螈本体武器数值 （传奇的数值也不会超过单分子剑）
+Add CE compat for newly updated moelotl race weapons.
+
+2. 缝补 MoeLotlApparels.xml
+岩灵装 蓑羽装 护心镜 CE兼容
+Add CE compat for newly updated moelotl race armours.
+
+3. Hediffs_Level.xml 缝补
+更正 statOffsets 路径使其符合新版本功法的定义路径， 
+使 雷脉 电抗buff，火脉 烟抗buff，聚气法 烟抗debuff 正常生效
+Fixing original mod's xml path to fit newly updated moelotl defs.
+
+4. Weapons_Ranged.xml 
+鹰弩近战锐穿增强，使其符合描述 ，
+破阵弩连射增强，修改音效， 增加点射模式，延长瞄准和装填时间 ，
+部分连弩射速小改，
+落日弓射程改为45，麒麟铳射程改为55。
+
+Enhancements and nerfs for repeating crossbows.
+Falling sun bow shoot range up to 45,
+Platinum rifle shoot range up to 55.
+
+
+5. FEWeapons_MeleeBlunt.xml FEWeapons_MeleeSharp.xml  缝补
+赤血宗 勾魂幡 骨矛 CE兼容
+Add CE compat for newly updated weapons of blood cult
+
+6.  FEApparels.xml  缝补
+赤血宗 血眸笠 泣魂衣 饕餮面 饕餮甲 CE兼容
+Add CE compat for newly updated armours of blood cult
+
+7. AxolotlCE.dll 修正
+    修复剑气无法发射的问题，
+    新增3个CE子弹类。    
+Fixing sword aura issues.
+3 new bullet classes added for compat features.
+
+8.七日重生 
+普通宗师道袍 普通高级木剑 符咒弩 法器材料 CE兼容。
+将机械蜈蚣的镀金武装拆分为18种新弹药(误)，
+新增弹药种类 ：镀金退魔弹（FMJ套皮魔改） , 特性为：伤害和双穿小幅降低，无需鸡血附魔即可直接对僵尸削煞，对实体造成2倍伤害。
+以下问题本人无力解决，
+鸡血附魔无效果无法削煞，心魇削煞无效，心魇特殊攻击效果无法触发，
+只能寄希望CE组或螈组的人来修了。
+Add CE compat for weapons,robes,materials of Rigor Mortis
+Add new ammo types: Gold-Plated Exorcism Ammunition, including 18 new ammos.
+Issues ( i ) can not fix:
+Chicken Blood enchantment (Hediff) effect not properly working.
+BlackWound special effects not working.
+
+9.TAWM
+三件套 CE兼容。
+Add CE compat for TAWM clothes.
+
+10.可能的隐性依赖问题
+该mod制作仓促，xml和c#都是现学现用，直到我看到may require xxx dlc 、 isModActive 这类关键词才注意到，我完全没做mod的前提判定。
+No mod prerequisites check (like mayRequireXXX dlc, is XXX ModActive,etc)
+
+11.已知未解决问题和BUG
+征召模式用螈气模式射击时突然取消征召偶尔会报NPE红字，属于AxolotlCE.dll内的问题，找不到稳定复现和修复的方法，
+本人是工作忙碌的力工，更新可能不及时。
+Know issues and BUGs
+NPEs show up when quiting draft of pawns who doing qi-ed shoots. Can't fix that.
+Busy working life, i can not make update of this mod in time.
+
+

@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>MoeLotl_CE_Crossbow</defName>
+		<label>crossbow bolts</label>
+		<ammoTypes>
+			<Ammo_CrossbowBolt_Stone>MoeLotl_CE_CrossbowBolt_Stone</Ammo_CrossbowBolt_Stone>
+			<Ammo_CrossbowBolt_Steel>MoeLotl_CE_CrossbowBolt_Steel</Ammo_CrossbowBolt_Steel>
+			<Ammo_CrossbowBolt_Plasteel>MoeLotl_CE_CrossbowBolt_Plasteel</Ammo_CrossbowBolt_Plasteel>
+			<Ammo_CrossbowBolt_Venom>MoeLotl_CE_CrossbowBolt_Venom</Ammo_CrossbowBolt_Venom>
+			<Ammo_CrossbowBolt_Flame>MoeLotl_CE_CrossbowBolt_Flame</Ammo_CrossbowBolt_Flame>
+<!-- 
+			<Ammo_RMCE_StickyRiceBolt>Projectile_TaoistBolt_StickyRice</Ammo_RMCE_StickyRiceBolt>
+            <Ammo_RMCE_PeachWoodBolt>Projectile_TaoistBolt_PeachWood</Ammo_RMCE_PeachWoodBolt>
+-->
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<!-- The amount of arrows usable over the ammo lifetime for each resource cost is equal to
+		[r / (1 - x)];
+			x = preExplosionSpawnChance,
+			r = resource cost. -->
+
+	<ThingDef ParentName="BaseCrossbowBoltProjectile">
+		<defName>MoeLotl_CE_CrossbowBolt_Stone</defName>
+		<label>crossbow bolt (stone)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Stone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>25</speed>
+			<damageAmountBase>10</damageAmountBase>
+			<armorPenetrationBlunt>2.94</armorPenetrationBlunt>
+			<armorPenetrationSharp>1.5</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.1</preExplosionSpawnChance>
+			<!-- 11.11 bolts per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Stone</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBolt_StoneQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseCrossbowBoltProjectile">
+		<defName>MoeLotl_CE_CrossbowBolt_Steel</defName>
+		<label>crossbow bolt (steel)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Steel</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>11</damageAmountBase>
+			<armorPenetrationBlunt>6.5</armorPenetrationBlunt>
+			<armorPenetrationSharp>2.5</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.333</preExplosionSpawnChance>
+			<!-- 14.99 bolts per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Steel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBolt_SteelQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseCrossbowBoltProjectile">
+		<defName>MoeLotl_CE_CrossbowBolt_Plasteel</defName>
+		<label>crossbow bolt (plasteel)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Plasteel</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>30</speed>
+			<damageAmountBase>9</damageAmountBase>
+			<armorPenetrationBlunt>6.32</armorPenetrationBlunt>
+			<armorPenetrationSharp>3.5</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<!-- 25 bolts per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Plasteel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBolt_PlasteelQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseCrossbowBoltProjectile">
+		<defName>MoeLotl_CE_CrossbowBolt_Venom</defName>
+		<label>crossbow bolt (venom)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Venom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>ArrowVenom</damageDef>
+			<damageAmountBase>11</damageAmountBase>
+			<armorPenetrationBlunt>6.5</armorPenetrationBlunt>
+			<armorPenetrationSharp>2.5</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<!-- 25 arrows per resource -->
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Steel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBolt_VenomQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseCrossbowBoltProjectile">
+		<defName>MoeLotl_CE_CrossbowBolt_Flame</defName>
+		<label>crossbow bolt (flame)</label>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Flame</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<explosionRadius>0.2</explosionRadius>
+			<damageDef>ArrowFire</damageDef>
+			<damageAmountBase>5</damageAmountBase>
+			<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>0.16</preExplosionSpawnChance>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>MoeLotl_CE_CrossbowBolt_FlameQ</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--================== Qi-ed projectiles ==================-->
+	<ThingDef ParentName="BaseCrossbowBoltProjectile" Name="BaseQiCorssbowBolt" Abstract="true">
+		<thingClass>AxolotlCE.LotiQiBulletCE</thingClass>
+		<graphicData>
+			<texPath>Axolotl_Weapons/bullet_Axolotl_MoeLotlCrossBow_Q</texPath>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>30</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCorssbowBolt">
+		<defName>MoeLotl_CE_CrossbowBolt_StoneQ</defName>
+		<label>crossbow bolt (stone)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBlunt>2.94</armorPenetrationBlunt>
+			<armorPenetrationSharp>3</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCorssbowBolt">
+		<defName>MoeLotl_CE_CrossbowBolt_SteelQ</defName>
+		<label>crossbow bolt (steel)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationBlunt>6.5</armorPenetrationBlunt>
+			<armorPenetrationSharp>5</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCorssbowBolt">
+		<defName>MoeLotl_CE_CrossbowBolt_PlasteelQ</defName>
+		<label>crossbow bolt (plasteel)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>13</damageAmountBase>
+			<armorPenetrationBlunt>6.32</armorPenetrationBlunt>
+			<armorPenetrationSharp>7</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCorssbowBolt">
+		<defName>MoeLotl_CE_CrossbowBolt_VenomQ</defName>
+		<label>crossbow bolt (venom)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>ArrowVenom</damageDef>
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBlunt>6.5</armorPenetrationBlunt>
+			<armorPenetrationSharp>5</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseQiCorssbowBolt">
+		<defName>MoeLotl_CE_CrossbowBolt_FlameQ</defName>
+		<label>crossbow bolt (flame)</label>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<explosionRadius>0.2</explosionRadius>
+			<damageDef>ArrowFire</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>0.16</preExplosionSpawnChance>
+		</projectile>
+	</ThingDef>
+	<!-- RM ammo -->
+
+	<!-- 
+
+	<ThingCategoryDef>
+		<defName>AmmoTaoistCrossbowBolts</defName>
+		<label>taoist crossbow bolts</label>
+		<parent>AmmoNeolithic</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberArrow</iconPath>
+	</ThingCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RMCE_StickyRiceBolt</defName>
+		<label>sticky rice bolt</label>
+		<labelShort>sticky rice bolt</labelShort>
+		<description>bolt which its head tied with a small pack of sticky rice,it does almost no physical damage but can harm JiangShi.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RMCE_PeachWoodBolt</defName>
+		<label>peach wood bolt</label>
+		<labelShort>peach wood bolt</labelShort>
+		<description>bolt make from peach wood which contain Yang power to deal reasonable damage to JiangShi.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="TaoistBoltBase" ParentName="AmmoCrossbowBoltBase" Abstract="True">
+		<description>Specialized crossbow bolts used for damage zombies,do nearly zero damage to living creatures.</description>
+		<statBases>
+			<Mass>0.06</Mass>
+			<Bulk>0.08</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting</li>
+		</tradeTags>
+		<thingCategories>
+			<li>AmmoTaoistCrossbowBolts</li>
+		</thingCategories>
+		<stackLimit>500</stackLimit>
+  	</ThingDef>
+
+
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="TaoistBoltBase">
+		<defName>Ammo_RMCE_StickyRiceBolt</defName>
+		<label>Sticky rice bolt</label>
+		
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Stone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.05</Mass>
+		</statBases>
+		<ammoClass>RMCE_StickyRiceBolt</ammoClass>
+		<tradeTags>
+			<li>CE_AutoEnableCrafting_CraftingSpot</li>
+		</tradeTags>
+
+	</ThingDef>
+
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="TaoistBoltBase">
+		<defName>Ammo_RMCE_PeachWoodBolt</defName>
+		<label>Peach wood bolt</label>
+		
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Stone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+		</statBases>
+		<ammoClass>RMCE_PeachWoodBolt</ammoClass>
+		<tradeTags>
+			<li>CE_AutoEnableCrafting_CraftingSpot</li>
+		</tradeTags>
+
+	</ThingDef>
+
+
+
+	<ThingDef Name="BaseTaoistBoltProjectile" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Arrow_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Arrow</damageDef>
+			<speed>25</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseTaoistBoltProjectile">
+		<defName>Projectile_TaoistBolt_StickyRice</defName>
+		<label>crossbow bolt (sticky rice)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Stone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>21</speed>
+			<damageAmountBase>3</damageAmountBase>
+			<armorPenetrationBlunt>1</armorPenetrationBlunt>
+			<armorPenetrationSharp>0.1</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.2</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_RMCE_StickyRiceBolt</preExplosionSpawnThingDef>
+		</projectile>
+
+  	</ThingDef>
+
+	<ThingDef ParentName="BaseTaoistBoltProjectile">
+		<defName>Projectile_TaoistBolt_PeachWood</defName>
+		<label>crossbow bolt (peach wood)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Stone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>28</speed>
+			<damageAmountBase>2</damageAmountBase>
+			<armorPenetrationBlunt>0.3</armorPenetrationBlunt>
+			<armorPenetrationSharp>0.9</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.4</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_RMCE_PeachWoodBolt</preExplosionSpawnThingDef>
+		</projectile>
+
+  	</ThingDef>
+
+
+
+
+    <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+		<defName>MakeAmmo_RMCE_StickyRiceBolt</defName>
+		<label>make sticky rice bolts x10</label>
+		<description>Craft 10 sticky rice bolts.</description>
+		<jobString>Making sticky rice bolts.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+            <li>
+				<filter>
+					<thingDefs>
+						<li>RawRice</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+            <li>
+				<filter>
+					<thingDefs>
+						<li>Cloth</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+				<li>RawRice</li>
+				<li>Cloth</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_RMCE_StickyRiceBolt>10</Ammo_RMCE_StickyRiceBolt>
+		</products>
+		<workAmount>300</workAmount>
+	</RecipeDef>
+
+    <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+		<defName>MakeAmmo_RMCE_PeachWoodBolt</defName>
+		<label>make peach wood bolts x10</label>
+		<description>Craft 10 peach wood bolts.</description>
+		<jobString>Making peach wood bolts.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RM_AxoPeachWood</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RM_AxoPeachWood</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_RMCE_PeachWoodBolt>10</Ammo_RMCE_PeachWoodBolt>
+		</products>
+		<workAmount>500</workAmount>
+	</RecipeDef>
+-->
+	
+</Defs>

@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationRemove">
+		<xpath>
+			Defs/ThingDef[defName="Axolotl_MoeLotlCrossBow_Basic"
+			or defName="Axolotl_MoeLotlCrossBow_Intermediate"
+			or defName="Axolotl_MoeLotlCrossBow_Advanced"
+			or defName="Axolotl_FallingSunBow"
+			or defName="Axolotl_BattlebreakerCrossbow"
+			or defName="Axolotl_BlackGoldFirearm"
+			or defName="Axolotl_PlatinumFirearm"]/verbs
+		</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>
+			Defs/ThingDef[defName="Axolotl_MoeLotlCrossBow_Basic"
+			or defName="Axolotl_MoeLotlCrossBow_Intermediate"
+			or defName="Axolotl_MoeLotlCrossBow_Advanced"
+			or defName="Axolotl_FallingSunBow"
+			or defName="Axolotl_BattlebreakerCrossbow"
+			or defName="Axolotl_BlackGoldFirearm"
+			or defName="Axolotl_PlatinumFirearm"
+			]/comps
+		</xpath>
+		<value>
+			<li>
+				<compClass>AxolotlCE.CompQiWeaponStatCE</compClass>
+			</li>
+		</value>
+	</Operation>
+<!-- 一般连弩 -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_MoeLotlCrossBow_Basic</defName>
+		<statBases>
+			<SightsEfficiency>0.8</SightsEfficiency>
+			<ShotSpread>1</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>3.00</Bulk>
+			<RangedWeapon_Cooldown>0.2</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>AxolotlCE.Verb_LotiIntensifyShotCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>MoeLotl_CE_CrossbowBolt_Stone</defaultProjectile>
+			<burstShotCount>3</burstShotCount>
+			<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+			<warmupTime>1.5</warmupTime>
+			<range>14</range>
+			<soundCast>Bow_Small</soundCast>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>16</magazineSize>
+			<reloadTime>2.5</reloadTime>
+			<ammoSet>MoeLotl_CE_Crossbow</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiAimMode>Snapshot</aiAimMode>
+		</FireModes>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_MoeLotlCrossBow_Basic"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>7</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	
+<!-- 濯枝-->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_MoeLotlCrossBow_Intermediate</defName>
+		<statBases>
+			<SightsEfficiency>0.8</SightsEfficiency>
+			<ShotSpread>1</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>4.00</Bulk>
+			<RangedWeapon_Cooldown>0.2</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>AxolotlCE.Verb_LotiIntensifyShotCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>MoeLotl_CE_CrossbowBoltInt_Stone</defaultProjectile>
+			<warmupTime>1.2</warmupTime>
+			<burstShotCount>4</burstShotCount>
+			<ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+			<range>22</range>
+			<soundCast>Bow_Recurve</soundCast>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>16</magazineSize>
+			<reloadTime>3</reloadTime>
+			<ammoSet>MoeLotl_CE_Crossbow_Int</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiAimMode>Snapshot</aiAimMode>
+		</FireModes>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_MoeLotlCrossBow_Intermediate"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>7</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+					<armorPenetrationSharp>1</armorPenetrationSharp>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_MoeLotlCrossBow_Intermediate"]/comps/li[@Class="Axolotl.CompProperties_LotiQiRangedWeapon_ChangeProjectile"]/costPerShoot</xpath>
+		<value>
+			<costPerShoot>1</costPerShoot>
+		</value>
+	</Operation>
+
+	<!-- 鹰弩 有刺刀-->
+
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_MoeLotlCrossBow_Advanced</defName>
+		<statBases>
+			<SightsEfficiency>0.8</SightsEfficiency>
+			<ShotSpread>1</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>5.00</Bulk>
+			<RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>AxolotlCE.Verb_LotiIntensifyShotCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>MoeLotl_CE_CrossbowBoltAdv_Stone</defaultProjectile>
+			<warmupTime>1.5</warmupTime>
+			<burstShotCount>8</burstShotCount>
+			<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+			<range>30</range>
+			<soundCast>Bow_Large</soundCast>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>16</magazineSize>
+			<reloadTime>4</reloadTime>
+			<ammoSet>MoeLotl_CE_Crossbow_Adv</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiAimMode>Snapshot</aiAimMode>
+		</FireModes>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_MoeLotlCrossBow_Advanced"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>12</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetrationBlunt>1.5</armorPenetrationBlunt>
+					<armorPenetrationSharp>6</armorPenetrationSharp>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_MoeLotlCrossBow_Advanced"]/comps/li[@Class="Axolotl.CompProperties_LotiQiRangedWeapon_ChangeProjectile"]/costPerShoot</xpath>
+		<value>
+			<costPerShoot>1</costPerShoot>
+		</value>
+	</Operation>
+<!-- 破阵 -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_BattlebreakerCrossbow</defName>
+		<statBases>
+			<SightsEfficiency>0.8</SightsEfficiency>
+			<ShotSpread>1</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>5.00</Bulk>
+			<RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>AxolotlCE.Verb_LotlQiSuppShootCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>MoeLotl_CE_CrossbowBoltAdv_Stone</defaultProjectile>
+			<warmupTime>3.5</warmupTime>
+			<burstShotCount>18</burstShotCount>
+			<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+			<range>30</range>
+			<!-- <soundCast>Bow_Large</soundCast>-->
+			<soundCast>Repeat_Crossbow</soundCast>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>36</magazineSize>
+			<reloadTime>6</reloadTime>
+			<ammoSet>MoeLotl_CE_Crossbow_Adv</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiAimMode>Snapshot</aiAimMode>
+			<aimedBurstShotCount>6</aimedBurstShotCount>
+		</FireModes>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_BattlebreakerCrossbow"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>7</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+					<armorPenetrationSharp>1</armorPenetrationSharp>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_BattlebreakerCrossbow"]/comps/li[@Class="Axolotl.CompProperties_LotiQiRangedWeapon_SupplementShoot"]/costPerShoot</xpath>
+		<value>
+			<costPerShoot>1</costPerShoot>
+		</value>
+	</Operation>
+
+<!-- 落日 -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_FallingSunBow</defName>
+		<statBases>
+			<SightsEfficiency>0.8</SightsEfficiency>
+			<ShotSpread>1</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>5.00</Bulk>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>AxolotlCE.Verb_LotiIntensifyShotCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Projectile_GreatArrow_Stone</defaultProjectile>
+			<warmupTime>1.3</warmupTime>
+			<range>45</range>
+			<soundCast>Bow_Large</soundCast>
+		</Properties>
+		<AmmoUser>
+			<ammoSet>MoeLotl_CE_Arrow</ammoSet>
+		</AmmoUser>
+		<FireModes />
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_FallingSunBow"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>7</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+					<armorPenetrationSharp>1</armorPenetrationSharp>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_FallingSunBow"]/comps/li[@Class="Axolotl.CompProperties_LotiQiRangedWeapon_ChangeProjectile"]/costPerShoot</xpath>
+		<value>
+			<costPerShoot>1</costPerShoot>
+		</value>
+	</Operation>
+
+
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_BlackGoldFirearm" or defName="Axolotl_PlatinumFirearm"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>stock</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.55</cooldownTime>
+					<chanceFactor>1.5</chanceFactor>
+					<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>barrel</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>5</power>
+					<cooldownTime>2.02</cooldownTime>
+					<armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>muzzle</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.55</cooldownTime>
+					<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_BlackGoldFirearm" or defName="Axolotl_PlatinumFirearm"]/comps/li[@Class="Axolotl.CompProperties_LotiQiRangedWeapon_ChangeProjectile"]/costPerShoot</xpath>
+		<value>
+			<costPerShoot>1</costPerShoot>
+		</value>
+	</Operation>
+
+	<!-- 麒麟 -->
+
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_PlatinumFirearm</defName>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.12</ShotSpread>
+			<SwayFactor>1.1</SwayFactor>
+			<Bulk>14.0</Bulk>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<recoilAmount>1.53</recoilAmount>
+			<verbClass>AxolotlCE.Verb_LotiIntensifyShotCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_AxolotlMusketBall</defaultProjectile>
+			<warmupTime>2.5</warmupTime>
+			<burstShotCount>2</burstShotCount>
+			<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+			<range>55</range>
+			<soundCast>Shot_BoltActionRifle</soundCast>
+			<soundCastTail>GunTail_Heavy</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>3</magazineSize>
+			<reloadTime>3.2</reloadTime>
+			<AmmoGenPerMagOverride>6</AmmoGenPerMagOverride>
+			<ammoSet>Ammoset_AxolotlGun</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiAimMode>AimedShot</aiAimMode>
+		</FireModes>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<!-- 黑金 -->
+
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_BlackGoldFirearm</defName>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.42</ShotSpread>
+			<SwayFactor>1.4</SwayFactor>
+			<Bulk>7.8</Bulk>
+			<RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<recoilAmount>2.6</recoilAmount>
+			<verbClass>AxolotlCE.Verb_LotiIntensifyShotCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_AxolotlGrapeShot</defaultProjectile>
+			<warmupTime>1.4</warmupTime>
+			<range>16</range>
+			<soundCast>Shot_Shotgun</soundCast>
+			<soundCastTail>GunTail_Heavy</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>1</magazineSize>
+			<reloadTime>5.6</reloadTime>
+			<AmmoGenPerMagOverride>3</AmmoGenPerMagOverride>
+			<ammoSet>Ammoset_AxolotlGrapeshot</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiAimMode>Snapshot</aiAimMode>
+		</FireModes>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+
+	<!-- 云鲸炮 -->
+
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_VastSeaCelestialWhaleCannon</defName>
+		<statBases>
+			<Mass>15</Mass>
+			<RangedWeapon_Cooldown>0.43</RangedWeapon_Cooldown>
+			<SightsEfficiency>1.1</SightsEfficiency>
+			<ShotSpread>2</ShotSpread>
+			<SwayFactor>1.8</SwayFactor>
+			<Bulk>20</Bulk>
+			<WorkToMake>35500</WorkToMake>
+		</statBases>
+		<Properties>
+			<recoilAmount>0</recoilAmount>
+			<verbClass>CombatExtended.Verb_ShootMortarCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_Axolotl_WhaleCannonAmmo_HE</defaultProjectile>
+			<warmupTime>1.0</warmupTime>
+			<range>74.9</range>
+			<minRange>14.9</minRange>
+			<burstShotCount>5</burstShotCount>
+			<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+			<soundCast>Shot_IncendiaryLauncher</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<circularError>7</circularError>
+			<indirectFirePenalty>0.25</indirectFirePenalty>
+			<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>5</magazineSize>
+			<reloadOneAtATime>true</reloadOneAtATime>
+			<reloadTime>1</reloadTime>
+			<ammoSet>Ammoset_Axolotl_WhaleCannonAmmo</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiUseBurstMode>FALSE</aiUseBurstMode>
+			<aiAimMode>SuppressFire</aiAimMode>
+		</FireModes>
+		<weaponTags>
+			<li>CE_AI_AOE</li>
+		</weaponTags>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_VastSeaCelestialWhaleCannon"]/comps</xpath>
+		<value>
+			<li Class="CombatExtended.CompProperties_Charges">
+				<chargeSpeeds>
+					<li>20</li>
+					<li>30</li>
+					<li>40</li>
+					<li>50</li>
+					<li>60</li>
+				</chargeSpeeds>
+			</li>
+		</value>
+	</Operation>
+
+
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_VastSeaCelestialWhaleCannon"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>stock</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.55</cooldownTime>
+					<chanceFactor>1.5</chanceFactor>
+					<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>barrel</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>5</power>
+					<cooldownTime>2.02</cooldownTime>
+					<armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>muzzle</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.55</cooldownTime>
+					<armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<!--
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_AuspiciousNeedle"]/graphicData/graphicClass</xpath>
+		<value>
+			<graphicClass>CombatExtended.Graphic_StackCountRanged</graphicClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_AuspiciousNeedle"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Axolotl_Ammo/Needle</texPath>
+		</value>
+	</Operation>
+
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>Axolotl_AuspiciousNeedle</defName>
+		<statBases>
+			<Mass>0.1</Mass>
+			<Bulk>0.1</Bulk>
+			<RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+			<SightsEfficiency>1.0</SightsEfficiency>
+		</statBases>
+		<Properties>
+			<verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<range>10.0</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>ThrowGrenade</soundCast>
+			<defaultProjectile>Bullet_AuspiciousNeedleCE</defaultProjectile>
+		</Properties>
+		<weaponTags>
+			<li>CE_OneHandedWeapon</li>
+		</weaponTags>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_AuspiciousNeedle"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>thorn</label>
+					<capacities>
+						<li>ScratchToxic</li>
+					</capacities>
+					<power>6</power>
+					<cooldownTime>0.8</cooldownTime>
+					<armorPenetrationSharp>5</armorPenetrationSharp>
+					<armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_AuspiciousNeedle"]</xpath>
+		<value>
+			<stackLimit>100</stackLimit>
+			<recipeMaker>
+				<bulkRecipeCount>10</bulkRecipeCount>
+				<targetCountAdjustment>10</targetCountAdjustment>
+			</recipeMaker>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_AuspiciousNeedle"]/costList/Jade</xpath>
+		<value>
+			<Steel>2</Steel>
+			<Jade>2</Jade>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Axolotl_AuspiciousNeedle"]/costStuffCount</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Axolotl_AuspiciousNeedle"]/stuffCategories</xpath>
+	</Operation>
+	-->
+</Patch>

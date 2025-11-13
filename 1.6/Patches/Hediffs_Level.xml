@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--Qi basic-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_LotlQi"]/stages/li[minSeverity="2"]/statFactors</xpath>
+		<value>
+			<Suppressability>0.9</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_LotlQi"]/stages/li[minSeverity="3"]/statFactors</xpath>
+		<value>
+			<Suppressability>0.75</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_LotlQi"]/stages/li[minSeverity="4"]/statFactors</xpath>
+		<value>
+			<Suppressability>0.3</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_LotlQi"]/stages/li[minSeverity="5"]/statFactors</xpath>
+		<value>
+			<Suppressability>0.1</Suppressability>
+		</value>
+	</Operation>
+
+	<!--Thunder-->
+	<!--总不能被自己电死吧-->
+<!-- thunder 1 -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="1"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="1"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="1"]/statOffsets</xpath>
+		<value>
+			<ArmorRating_Electric>0.2</ArmorRating_Electric>
+		</value>
+	</Operation>
+<!-- thunder 2 -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="2"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="2"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="2"]/statOffsets</xpath>
+		<value>
+			<ArmorRating_Electric>0.4</ArmorRating_Electric>
+		</value>
+	</Operation>
+
+<!-- thunder 3 -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="3"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="3"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="3"]/statOffsets</xpath>
+		<value>
+			<ArmorRating_Electric>0.65</ArmorRating_Electric>
+		</value>
+	</Operation>
+<!-- thunder 4 -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="4"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="4"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="4"]/statOffsets</xpath>
+		<value>
+			<ArmorRating_Electric>0.8</ArmorRating_Electric>
+		</value>
+	</Operation>
+
+<!-- thunder 5 -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="5"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="5"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Thunder"]/statModifier/li[level="5"]/statOffsets</xpath>
+		<value>
+			<ArmorRating_Electric>1</ArmorRating_Electric>
+		</value>
+	</Operation>
+
+	<!--Fire-->
+	<!--总不能被自己呛死吧-->
+<!-- fire1 -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="1"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="1"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="1"]/statOffsets</xpath>
+		<value>
+			<SmokeSensitivity>-0.2</SmokeSensitivity>
+		</value>
+	</Operation>
+<!-- fire2 -->
+ 	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="2"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="2"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="2"]/statOffsets</xpath>
+		<value>
+			<SmokeSensitivity>-0.4</SmokeSensitivity>
+		</value>
+	</Operation>
+<!-- fire3 -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="3"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="3"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="3"]/statOffsets</xpath>
+		<value>
+			<SmokeSensitivity>-0.6</SmokeSensitivity>
+		</value>
+	</Operation>
+<!-- fire4 -->
+ 	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="4"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="4"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="4"]/statOffsets</xpath>
+		<value>
+			<SmokeSensitivity>-0.8</SmokeSensitivity>
+		</value>
+	</Operation>
+<!-- fire5 -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="5"]/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="5"]</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MainSkill_Fire"]/statModifier/li[level="5"]/statOffsets</xpath>
+		<value>
+			<SmokeSensitivity>-1</SmokeSensitivity>
+		</value>
+	</Operation>
+
+	<!--Breath-->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MentSkill_BreathingMethod"]/statModifier/li/statOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MentSkill_BreathingMethod"]/statModifier/li</xpath>
+			<value>
+				<statOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+	<!-- 神他妈猛吸一口毒气-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/Axolotl.MoeLotlQiSkillDef[defName="Axolotl_MentSkill_BreathingMethod"]/statModifier/li/statOffsets</xpath>
+		<value>
+			<SmokeSensitivity>0.2</SmokeSensitivity>
+		</value>
+	</Operation>
+</Patch>

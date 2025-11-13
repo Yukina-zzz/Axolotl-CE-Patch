@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <CombatExtended.AmmoSetDef>
+		<defName>Ammoset_IncanationCrossbolt_CE</defName>
+		<label>Incanation Crossbow</label>
+		<ammoTypes>
+			<Ammo_CrossbowBolt_Stone>RMCE_CrossbowBolt_Stone</Ammo_CrossbowBolt_Stone>
+ 			<Ammo_CrossbowBolt_Steel>RMCE_CrossbowBolt_Steel</Ammo_CrossbowBolt_Steel>
+			<Ammo_CrossbowBolt_Plasteel>RMCE_CrossbowBolt_Plasteel</Ammo_CrossbowBolt_Plasteel>
+<!--		
+			<Ammo_CrossbowBolt_Venom>RMCE_CrossbowBolt_Venom</Ammo_CrossbowBolt_Venom>
+			<Ammo_CrossbowBolt_Flame>RMCE_CrossbowBolt_Flame</Ammo_CrossbowBolt_Flame>
+-->
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+    <!-- normal bolts which hurts zombie 正常弩箭，单倍煞气削减 -->
+
+    <ThingDef ParentName="BaseCrossbowBoltProjectile" Name="RMCE_BaseCrossbowBolt" Abstract="true">
+		<thingClass>AxolotlCE.RMCE_AntiZombieBullet</thingClass>
+        <projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>50</speed>
+            <damageDef>Arrow</damageDef>
+		</projectile>
+	</ThingDef>
+
+    <ThingDef ParentName="RMCE_BaseCrossbowBolt">
+		<defName>RMCE_CrossbowBolt_Stone</defName>
+		<label>crossbow bolt (stone)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Stone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBlunt>6</armorPenetrationBlunt>
+			<armorPenetrationSharp>4</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.2</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Stone</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>RMCE_CrossbowBolt_Stone_Qied</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+    <ThingDef ParentName="RMCE_BaseCrossbowBolt">
+		<defName>RMCE_CrossbowBolt_Steel</defName>
+		<label>crossbow bolt (steel)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Steel</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBlunt>13</armorPenetrationBlunt>
+			<armorPenetrationSharp>8</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.1</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Steel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>RMCE_CrossbowBolt_Steel_Qied</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="RMCE_BaseCrossbowBolt">
+		<defName>RMCE_CrossbowBolt_Plasteel</defName>
+		<label>crossbow bolt (plasteel)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Plasteel</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBlunt>18</armorPenetrationBlunt>
+			<armorPenetrationSharp>12</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.1</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Plasteel</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>RMCE_CrossbowBolt_Plasteel_Qied</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- 
+
+	<ThingDef ParentName="RMCE_BaseCrossbowBolt">
+		<defName>RMCE_CrossbowBolt_Venom</defName>
+		<label>crossbow bolt (venom)</label>
+		<thingClass inherit="False">AxolotlCE.BulletWithToxicCE</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Venom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>10</damageAmountBase>
+			<armorPenetrationBlunt>6</armorPenetrationBlunt>
+			<armorPenetrationSharp>11</armorPenetrationSharp>
+			<preExplosionSpawnChance>0.1</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolt_Venom</preExplosionSpawnThingDef>
+		</projectile>
+		<modExtensions>
+			<li Class="AxolotlCE.ModExt_QiProjectile">
+				<projectile>RMCE_CrossbowBolt_Venom_Qied</projectile>
+			</li>
+		</modExtensions>
+	</ThingDef>
+-->
+    <!-- qied bolts 程序里给了双倍的煞气削减，打飞僵还是个位数就是了-->
+
+    <ThingDef ParentName="BaseCrossbowBoltProjectile" Name="RMCE_BaseQiCorssbowBolt" Abstract="true">
+		<thingClass>AxolotlCE.RMCE_AntiZombieBullet_Qied</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>60</speed>
+            <damageDef>Arrow</damageDef>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="RMCE_BaseQiCorssbowBolt">
+		<defName>RMCE_CrossbowBolt_Stone_Qied</defName>
+		<label>crossbow bolt (stone)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>55</speed>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBlunt>6</armorPenetrationBlunt>
+			<armorPenetrationSharp>6</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="RMCE_BaseQiCorssbowBolt">
+		<defName>RMCE_CrossbowBolt_Steel_Qied</defName>
+		<label>crossbow bolt (steel)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>75</speed>
+			<damageAmountBase>16</damageAmountBase>
+			<armorPenetrationBlunt>15</armorPenetrationBlunt>
+			<armorPenetrationSharp>11</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="RMCE_BaseQiCorssbowBolt">
+		<defName>RMCE_CrossbowBolt_Plasteel_Qied</defName>
+		<label>crossbow bolt (plasteel)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>85</speed>
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBlunt>22</armorPenetrationBlunt>
+			<armorPenetrationSharp>18</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+<!-- 
+	<ThingDef ParentName="RMCE_BaseQiCorssbowBolt">
+		<defName>RMCE_CrossbowBolt_Venom_Qied</defName>
+		<label>crossbow bolt (venom)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>60</speed>
+			<damageAmountBase>12</damageAmountBase>
+			<armorPenetrationBlunt>8</armorPenetrationBlunt>
+			<armorPenetrationSharp>14</armorPenetrationSharp>
+		</projectile>
+	</ThingDef>
+-->
+</Defs>

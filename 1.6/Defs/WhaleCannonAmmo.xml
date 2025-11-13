@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>Axolotl_WhaleCannonAmmo</defName>
+		<label>Celestial Whale Cannon Arrow</label>
+		<parent>AmmoShells</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberMortar</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>Ammoset_Axolotl_WhaleCannonAmmo</defName>
+		<label>Celestial Whale Cannon Arrow</label>
+		<ammoTypes>
+			<Ammo_Axolotl_WhaleCannonAmmo_HE>Bullet_Axolotl_WhaleCannonAmmo_HE</Ammo_Axolotl_WhaleCannonAmmo_HE>
+		</ammoTypes>
+		<isMortarAmmoSet>true</isMortarAmmoSet>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="Axolotl_WhaleCannonAmmoBase" ParentName="HeavyAmmoBase" Abstract="True">
+		<description>Specialized ammo designed to be fired from the Celestial Whale Cannon.</description>
+		<thingCategories>
+			<li>Axolotl_WhaleCannonAmmo</li>
+		</thingCategories>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_TableMachining</li>
+		</tradeTags>
+		<statBases>
+			<Mass>0.9</Mass>
+			<Bulk>0.87</Bulk>
+		</statBases>
+		<stackLimit>25</stackLimit>
+		<cookOffFlashScale>20</cookOffFlashScale>
+		<cookOffSound>MortarBomb_Explode</cookOffSound>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Axolotl_WhaleCannonAmmoBase">
+		<defName>Ammo_Axolotl_WhaleCannonAmmo_HE</defName>
+		<label>Celestial Whale Cannon Arrow (HE)</label>
+		<graphicData>
+			<texPath>Axolotl_Ammo/Cannon</texPath>
+			<graphicClass>CombatExtended.Graphic_StackCountRanged</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>20.1</MarketValue>
+		</statBases>
+		<ammoClass>GrenadeHE</ammoClass>
+		<detonateProjectile>Bullet_Axolotl_WhaleCannonAmmo_HE</detonateProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="BaseAxolotl_WhaleCannonAmmo" ParentName="BaseExplosiveBullet" Abstract="true">
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<graphicData>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>0</speed>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAxolotl_WhaleCannonAmmo">
+		<defName>Bullet_Axolotl_WhaleCannonAmmo_HE</defName>
+		<label>Celestial Whale Cannon Arrow (HE)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Rocket_Swarm</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>42</damageAmountBase>
+			<explosionRadius>1.5</explosionRadius>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Large>3</Fragment_Large>
+					<Fragment_Small>3</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="ArtilleryAmmoRecipeBase">
+		<defName>MakeAmmo_Axolotl_WhaleCannonAmmo_HE</defName>
+		<label>make Celestial Whale Cannon Arrow (HE) x5</label>
+		<description>Craft 5  Celestial Whale Cannon Arrows (HE).</description>
+		<jobString>Making  Celestial Whale Cannon Arrows (HE).</jobString>
+		<workAmount>3000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_Axolotl_WhaleCannonAmmo_HE>5</Ammo_Axolotl_WhaleCannonAmmo_HE>
+		</products>
+	</RecipeDef>
+</Defs>

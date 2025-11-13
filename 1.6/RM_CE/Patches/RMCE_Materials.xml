@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+	<!--三种木头作为材料提供的护甲加成 照搬木头了-->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="RMWoodBase"]/statBases/StuffPower_Armor_Sharp</xpath>
+		<value>
+			<StuffPower_Armor_Sharp>0</StuffPower_Armor_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="RMWoodBase"]/statBases/StuffPower_Armor_Blunt</xpath>
+		<value>
+			<StuffPower_Armor_Blunt>0.3</StuffPower_Armor_Blunt>
+		</value>
+	</Operation>
+
+	<!-- 三种木头作为手持武器时的数据 照搬原木-->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="RMWoodBase"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>2</power>
+					<cooldownTime>0.99</cooldownTime>
+					<armorPenetrationBlunt>0.288</armorPenetrationBlunt>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="RMWoodBase"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>0.2</MeleeCritChance>
+				<MeleeParryChance>1</MeleeParryChance>
+				<MeleeDodgeChance>0.13</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="RMWoodBase"]/statBases</xpath>
+		<value>
+			<Bulk>0.07</Bulk>
+			<MeleeCounterParryBonus>1.33</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+</Patch>

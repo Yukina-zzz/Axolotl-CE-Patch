@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- ========== Replace stuff category for crafting ========== -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_CrimsonBlade"]/stuffCategories</xpath>
+		<value>
+			<stuffCategories>
+				<li>Metallic_Weapon</li>
+			</stuffCategories>
+		</value>
+	</Operation>
+
+	<!-- Patch stats -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_CrimsonBlade"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>22</power>
+					<cooldownTime>1.8</cooldownTime>
+					<armorPenetrationBlunt>7.8</armorPenetrationBlunt>
+					<armorPenetrationSharp>4</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>edge</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>25</power>
+					<cooldownTime>1.1</cooldownTime>
+					<armorPenetrationBlunt>1.8</armorPenetrationBlunt>
+					<armorPenetrationSharp>2.2</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>Axolotl_TearingCut</def>
+							<amount>10</amount>
+							<armorPenetration>5</armorPenetration>
+							<chance>1.0</chance>
+						</li>
+					</extraMeleeDamages>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>2</power>
+					<chanceFactor>0.33</chanceFactor>
+					<cooldownTime>1.8</cooldownTime>
+					<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_CrimsonBlade"]/statBases</xpath>
+		<value>
+			<Bulk>3.5</Bulk>
+			<MeleeCounterParryBonus>0.7</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_CrimsonBlade"]/equippedStatOffsets</xpath>
+		<value>
+			<MeleeCritChance>1</MeleeCritChance>
+			<MeleeParryChance>0</MeleeParryChance>
+			<MeleeDodgeChance>0</MeleeDodgeChance>
+		</value>
+	</Operation>
+
+	<!-- Add tags -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Axolotl_CrimsonBlade"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Axolotl_CrimsonBlade"]</xpath>
+			<value>
+				<weaponTags />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_CrimsonBlade"]/weaponTags</xpath>
+		<value>
+			<li>CE_OneHandedWeapon</li>
+		</value>
+	</Operation>
+
+<!-- Bone Spear-->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_Bone-SpitterSpear"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>tip</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>22</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetrationBlunt>4.5</armorPenetrationBlunt>
+					<armorPenetrationSharp>11.35</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>Axolotl_TearingCut</def>
+							<amount>15</amount>
+							<armorPenetration>7</armorPenetration>
+							<chance>1.0</chance>
+						</li>
+					</extraMeleeDamages>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>10</power>
+					<chanceFactor>0.33</chanceFactor>
+					<cooldownTime>1.2</cooldownTime>
+					<armorPenetrationBlunt>6.225</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_Bone-SpitterSpear"]/statBases</xpath>
+		<value>
+			<Bulk>5.5</Bulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_Bone-SpitterSpear"]/equippedStatOffsets</xpath>
+		<value>
+			<MeleeCritChance>0.4</MeleeCritChance>
+			<MeleeParryChance>0.4</MeleeParryChance>
+			<MeleeDodgeChance>0.15</MeleeDodgeChance>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_CopperCoinSword"]/stuffCategories</xpath>
+		<value>
+			<stuffCategories>
+				<li>Metallic_Weapon</li>
+			</stuffCategories>
+		</value>
+	</Operation>
+
+    <!-- ========== Axolotl_CopperCoinSword ========== -->
+
+	<!-- Patch stats -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_CopperCoinSword"]/tools</xpath>
+		<value>
+			<tools>
+				
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>30</power>
+					<cooldownTime>2</cooldownTime>
+					<armorPenetrationBlunt>7.125</armorPenetrationBlunt>
+					<armorPenetrationSharp>1.4</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>edge</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>18</power>
+					<cooldownTime>1.4</cooldownTime>
+					<armorPenetrationBlunt>4.79</armorPenetrationBlunt>
+					<armorPenetrationSharp>2.23</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+				</li>
+                <li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>4</power>
+					<chanceFactor>0.33</chanceFactor>
+					<cooldownTime>1.8</cooldownTime>
+					<armorPenetrationBlunt>6.42</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_CopperCoinSword"]/statBases</xpath>
+		<value>
+			<Bulk>3.5</Bulk>
+			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_CopperCoinSword"]/equippedStatOffsets</xpath>
+		<value>
+			<MeleeCritChance>0.1</MeleeCritChance>
+			<MeleeParryChance>0.5</MeleeParryChance>
+			<MeleeDodgeChance>0.5</MeleeDodgeChance>
+		</value>
+	</Operation>
+
+	<!-- Add tags -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Axolotl_CopperCoinSword"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Axolotl_CopperCoinSword"]</xpath>
+			<value>
+				<weaponTags />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_CopperCoinSword"]/weaponTags</xpath>
+		<value>
+			<li>CE_OneHandedWeapon</li>
+		</value>
+	</Operation>
+
+	<!-- ========== Axolotl_CopperCoinSword ========== -->
+
+    <!-- 勾魂 大威力+cd长+笨重-->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Axolotl_SoulreaperPennon"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>head</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>40</power>
+					<cooldownTime>2.4</cooldownTime>
+					<armorPenetrationBlunt>16.125</armorPenetrationBlunt>
+					<armorPenetrationSharp>2.4</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+                <li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>14</power>
+					<chanceFactor>0.33</chanceFactor>
+					<cooldownTime>2</cooldownTime>
+					<armorPenetrationBlunt>11.42</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_SoulreaperPennon"]/statBases</xpath>
+		<value>
+			<Bulk>10</Bulk>
+            <MeleeCounterParryBonus>0.05</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+ 
+    <Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Axolotl_SoulreaperPennon"]/equippedStatOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Axolotl_SoulreaperPennon"]</xpath>
+			<value>
+				<equippedStatOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_SoulreaperPennon"]/equippedStatOffsets</xpath>
+		<value>
+			<MeleeCritChance>0.05</MeleeCritChance>
+			<MeleeParryChance>0.05</MeleeParryChance>
+			<MeleeDodgeChance>-0.15</MeleeDodgeChance>
+            <MentalBreakThreshold>-0.3</MentalBreakThreshold>
+		</value>
+	</Operation>
+
+</Patch>

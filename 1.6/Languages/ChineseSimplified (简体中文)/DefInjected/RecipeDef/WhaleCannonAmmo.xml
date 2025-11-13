@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: make Celestial Whale Cannon Arrow (HE) x5 -->
+  <MakeAmmo_Axolotl_WhaleCannonAmmo_HE.label>制作云鲸矢x5</MakeAmmo_Axolotl_WhaleCannonAmmo_HE.label>
+  <!-- EN: Craft 5  Celestial Whale Cannon Arrows (HE). -->
+  <MakeAmmo_Axolotl_WhaleCannonAmmo_HE.description>制作云鲸矢x5</MakeAmmo_Axolotl_WhaleCannonAmmo_HE.description>
+  <!-- EN: Making  Celestial Whale Cannon Arrows (HE). -->
+  <MakeAmmo_Axolotl_WhaleCannonAmmo_HE.jobString>正在制作云鲸矢x5</MakeAmmo_Axolotl_WhaleCannonAmmo_HE.jobString>
+  
+</LanguageData>

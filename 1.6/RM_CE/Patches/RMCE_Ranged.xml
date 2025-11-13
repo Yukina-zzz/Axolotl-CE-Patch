@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- 符咒弩 -->
+    <Operation Class="PatchOperationRemove">
+		<xpath>
+			Defs/ThingDef[defName="RM_IncantationCrossbow"]/verbs
+		</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>
+			Defs/ThingDef[defName="RM_IncantationCrossbow"]/comps
+		</xpath>
+		<value>
+			<li>
+				<compClass>AxolotlCE.CompQiWeaponStatCE</compClass>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>RM_IncantationCrossbow</defName>
+		<statBases>
+			<SightsEfficiency>0.8</SightsEfficiency>
+			<ShotSpread>0.9</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>3.00</Bulk>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<RM_AxoPeachWood>75</RM_AxoPeachWood>
+			<RM_UnrottenBone>75</RM_UnrottenBone>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<Properties>
+			<!-- <verbClass>AxolotlCE.Verb_IncanationCrossbowIntensifyShotCE</verbClass>-->
+			<verbClass>AxolotlCE.Verb_LotiIntensifyShotCE</verbClass>
+			<!-- 有bug <verbClass>CombatExtended.Verb_ShootCE</verbClass>	-->		
+			<hasStandardCommand>true</hasStandardCommand>
+			<!-- <defaultProjectile>MoeLotl_CE_CrossbowBoltAdv_Stone</defaultProjectile>-->
+			 <defaultProjectile>RMCE_CrossbowBolt_Stone</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>24</range>
+			<soundCast>Bow_Small</soundCast>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>1</magazineSize>
+			<reloadTime>1.6</reloadTime>
+			<!-- <ammoSet>MoeLotl_CE_Crossbow_Adv</ammoSet>-->
+			<ammoSet>Ammoset_IncanationCrossbolt_CE</ammoSet>
+			<AmmoGenPerMagOverride>5</AmmoGenPerMagOverride>
+		</AmmoUser>
+		<FireModes>
+			<aiAimMode>Snapshot</aiAimMode>
+		</FireModes>
+		<AllowWithRunAndGun>false</AllowWithRunAndGun>
+	</Operation>
+
+	<!-- 
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="RM_IncantationCrossbow"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>10</power>
+					<cooldownTime>2</cooldownTime>
+					<armorPenetrationBlunt>5</armorPenetrationBlunt>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="RM_IncantationCrossbow"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>10</power>
+					<cooldownTime>2</cooldownTime>
+					<armorPenetrationBlunt>5</armorPenetrationBlunt>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+</Patch>

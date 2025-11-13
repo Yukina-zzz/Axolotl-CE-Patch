@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ManeuverDef[defName="RM_BlackWoundCut"]/verb/verbClass</xpath>
+		<value>
+			<!-- 心魇特殊效果不生效，可能要重写个专属的verb_class -_- -->
+            <verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
+		</value>
+	</Operation>
+</Patch>

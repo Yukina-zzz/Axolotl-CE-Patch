@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_OminousLotlQi"]/stages/li[1]/statFactors</xpath>
+		<value>
+			<Suppressability>0.8</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_OminousLotlQi"]/stages/li[2]/statFactors</xpath>
+		<value>
+			<Suppressability>0.5</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_OminousLotlQi"]/stages/li[3]/statFactors</xpath>
+		<value>
+			<Suppressability>0.2</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_OminousLotlQi"]/stages/li[4]/statFactors</xpath>
+		<value>
+			<Suppressability>0</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_OminousLotlQi"]/stages/li[5]/statFactors</xpath>
+		<value>
+			<Suppressability>0</Suppressability>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Axolotl_ConsciousnessOrgan"]/stages/li[1]/statFactors</xpath>
+		<value>
+			<Suppressability>0</Suppressability>
+		</value>
+	</Operation>
+</Patch>

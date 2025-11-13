@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <CombatExtended.AmmoCategoryDef>
+		<defName>Exorcism</defName>
+		<label>exorcism</label>
+		<labelShort>EXM</labelShort>
+		<description>The ammunition used to fight back entities and JiangShi.Made with unusual materials, resulting in a slight decrease in performance.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+</Defs>

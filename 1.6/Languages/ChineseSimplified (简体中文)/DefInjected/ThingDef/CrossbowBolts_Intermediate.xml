@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: crossbow bolt (flame) -->
+  <MoeLotl_CE_CrossbowBoltInt_Flame.label>弩箭 (火)</MoeLotl_CE_CrossbowBoltInt_Flame.label>
+  
+  <!-- EN: crossbow bolt (flame) -->
+  <MoeLotl_CE_CrossbowBoltInt_FlameQ.label>弩箭 (火)</MoeLotl_CE_CrossbowBoltInt_FlameQ.label>
+  
+  <!-- EN: crossbow bolt (plasteel) -->
+  <MoeLotl_CE_CrossbowBoltInt_Plasteel.label>弩箭(玻璃钢)</MoeLotl_CE_CrossbowBoltInt_Plasteel.label>
+  
+  <!-- EN: crossbow bolt (plasteel) -->
+  <MoeLotl_CE_CrossbowBoltInt_PlasteelQ.label>弩箭(玻璃钢)</MoeLotl_CE_CrossbowBoltInt_PlasteelQ.label>
+  
+  <!-- EN: crossbow bolt (steel) -->
+  <MoeLotl_CE_CrossbowBoltInt_Steel.label>弩箭 (钢)</MoeLotl_CE_CrossbowBoltInt_Steel.label>
+  
+  <!-- EN: crossbow bolt (steel) -->
+  <MoeLotl_CE_CrossbowBoltInt_SteelQ.label>弩箭 (钢)</MoeLotl_CE_CrossbowBoltInt_SteelQ.label>
+  
+  <!-- EN: crossbow bolt (stone) -->
+  <MoeLotl_CE_CrossbowBoltInt_Stone.label>弩箭 (石)</MoeLotl_CE_CrossbowBoltInt_Stone.label>
+  
+  <!-- EN: crossbow bolt (stone) -->
+  <MoeLotl_CE_CrossbowBoltInt_StoneQ.label>弩箭 (石)</MoeLotl_CE_CrossbowBoltInt_StoneQ.label>
+  
+  <!-- EN: crossbow bolt (venom) -->
+  <MoeLotl_CE_CrossbowBoltInt_Venom.label>弩箭 (毒)</MoeLotl_CE_CrossbowBoltInt_Venom.label>
+  
+  <!-- EN: crossbow bolt (venom) -->
+  <MoeLotl_CE_CrossbowBoltInt_VenomQ.label>弩箭 (毒)</MoeLotl_CE_CrossbowBoltInt_VenomQ.label>
+  
+</LanguageData>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <!-- 357MAG 退魔-->
+    <ThingDef Class="CombatExtended.AmmoDef" ParentName="357MagnumBase">
+		<defName>Ammo_357Magnum_EXM</defName>
+		<label>.357 Magnum (EXM)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Revolver/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Exorcism</ammoClass>
+		<cookOffProjectile>Bullet_357Magnum_EXM</cookOffProjectile>
+	</ThingDef>
+
+    <ThingDef ParentName="Base357MagnumBullet">
+		<defName>Bullet_357Magnum_EXM</defName>
+		<label>.357 Magnum bullet (EXM)</label>
+		<thingClass>AxolotlCE.EXM_bullet</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>13</damageAmountBase>
+			<armorPenetrationSharp>6</armorPenetrationSharp>
+			<armorPenetrationBlunt>18.6</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+    <RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_357Magnum_EXM</defName>
+		<label>make .357 Magnum (EXM) cartridge x500</label>
+		<description>Craft 500 .357 Magnum (EXM) cartridges.</description>
+		<jobString>Making .357 Magnum (EXM) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>18</count>
+			</li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Silver</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+            </li>
+			<li>
+                <filter>
+					<thingDefs>
+						<li>Gold</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+            </li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Silver</li>
+				<li>Gold</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_357Magnum_EXM>500</Ammo_357Magnum_EXM>
+		</products>
+		<workAmount>1800</workAmount>
+	</RecipeDef>
+
+</Defs>
