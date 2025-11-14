@@ -29,6 +29,7 @@
 			</li>
 		</value>
 	</Operation>
+	
 <!-- 一般连弩 -->
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Axolotl_MoeLotlCrossBow_Basic</defName>

@@ -15,16 +15,16 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/tools</xpath>
 		<value>
 			<tools>
-				
 				<li Class="CombatExtended.ToolCE">
 					<label>point</label>
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>8</power>
-					<cooldownTime>1.6</cooldownTime>
-					<armorPenetrationBlunt>0.1</armorPenetrationBlunt>
-					<armorPenetrationSharp>6.228</armorPenetrationSharp>
+					<power>20</power>
+					<!-- <armorPenetration>0.35</armorPenetration> -->
+					<armorPenetrationSharp>3.6</armorPenetrationSharp>
+					<armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+					<cooldownTime>1.5</cooldownTime>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
@@ -32,21 +32,23 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>6</power>
-					<cooldownTime>1.1</cooldownTime>
-					<armorPenetrationBlunt>0.625</armorPenetrationBlunt>
-					<armorPenetrationSharp>4.125</armorPenetrationSharp>
+					<power>45</power>
+					<!-- <armorPenetration>0.35</armorPenetration> -->
+					<armorPenetrationSharp>3.6</armorPenetrationSharp>
+					<armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+					<cooldownTime>1.5</cooldownTime>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
 					<label>handle</label>
 					<capacities>
-						<li>Poke</li>
+						<li>Stab</li>
 					</capacities>
-					<power>3</power>
-					<chanceFactor>0.33</chanceFactor>
-					<cooldownTime>1.1</cooldownTime>
-					<armorPenetrationBlunt>1.125</armorPenetrationBlunt>
+					<power>6</power>
+					<!-- <armorPenetration>0.15</armorPenetration> -->
+					<armorPenetrationSharp>2.1</armorPenetrationSharp>
+					<armorPenetrationBlunt>1.1</armorPenetrationBlunt>
+					<cooldownTime>1.5</cooldownTime>
 					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -56,17 +58,17 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/statBases</xpath>
 		<value>
-			<Bulk>3.5</Bulk>
-			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
+			<Bulk>6</Bulk>
+			<MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
 		</value>
 	</Operation>
 	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Sword"]/equippedStatOffsets</xpath>
 		<value>
-			<MeleeCritChance>0.15</MeleeCritChance>
-			<MeleeParryChance>0.3</MeleeParryChance>
-			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			<MeleeCritChance>0.55</MeleeCritChance>
+			<MeleeParryChance>0.65</MeleeParryChance>
+			<MeleeDodgeChance>0.45</MeleeDodgeChance>
 		</value>
 	</Operation>
 	
@@ -103,10 +105,11 @@
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>9</power>
-					<cooldownTime>1</cooldownTime>
-					<armorPenetrationBlunt>0.4</armorPenetrationBlunt>
-					<armorPenetrationSharp>8.85</armorPenetrationSharp>
+					<power>50</power>
+					<cooldownTime>1.6</cooldownTime>
+					<!-- <armorPenetration>0.6</armorPenetration> -->
+					<armorPenetrationSharp>5.5</armorPenetrationSharp>
+					<armorPenetrationBlunt>1.5</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
@@ -114,25 +117,24 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>6</power>
-					<cooldownTime>0.8</cooldownTime>
-					<armorPenetrationBlunt>0.12</armorPenetrationBlunt>
-					<armorPenetrationSharp>6.2</armorPenetrationSharp>
+					<power>25</power>
+					<cooldownTime>1.4</cooldownTime>
+					<!-- <armorPenetration>0.45</armorPenetration> -->
+					<armorPenetrationSharp>2.0</armorPenetrationSharp>
+					<armorPenetrationBlunt>2.88</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
 					<label>handle</label>
 					<capacities>
-						<li>Stab</li>
+						<li>Poke</li>
 					</capacities>
-					<power>4</power>
-					<cooldownTime>1.4</cooldownTime>
-					<chanceFactor>0.20</chanceFactor>
-					<armorPenetrationSharp>1.449</armorPenetrationSharp>
-					<armorPenetrationBlunt>3.12</armorPenetrationBlunt>
+					<power>6</power>
+					<cooldownTime>1.5</cooldownTime>
+					<!-- <armorPenetration>0.15</armorPenetration> -->
+					<armorPenetrationBlunt>1.8</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
-				
 			</tools>
 		</value>
 	</Operation>
@@ -140,20 +142,19 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/statBases</xpath>
 		<value>
-			<Bulk>8</Bulk>
+			<Bulk>3.5</Bulk>
 			<MeleeCounterParryBonus>0.8</MeleeCounterParryBonus>
 		</value>
 	</Operation>
 	
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/equippedStatOffsets</xpath>
-		<value>
-			<MeleeCritChance>0.3</MeleeCritChance>
-			<MeleeParryChance>0.6</MeleeParryChance>
-			<MeleeDodgeChance>0.4</MeleeDodgeChance>
-			<!--Better dodging because of wind?-->
-		</value>
-	</Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/equippedStatOffsets</xpath>
+        <value>
+            <MeleeCritChance>0.6</MeleeCritChance>
+            <MeleeParryChance>0.7</MeleeParryChance>
+            <MeleeDodgeChance>0.5</MeleeDodgeChance>
+        </value>
+    </Operation>
 	
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_WindWrappingSword"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToPawn/extraMeleeDamages</xpath>
@@ -162,7 +163,7 @@
 				<li>
 					<def>Cut</def>
 					<amount>5</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 			</extraMeleeDamages>
 		</value>
@@ -175,7 +176,7 @@
 				<li>
 					<def>Cut</def>
 					<amount>5</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 			</extraMeleeDamages>
 		</value>
@@ -191,16 +192,16 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/tools</xpath>
 		<value>
 			<tools>
-				
 				<li Class="CombatExtended.ToolCE">
 					<label>point</label>
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>17</power>
-					<cooldownTime>2.6</cooldownTime>
-					<armorPenetrationBlunt>2.47</armorPenetrationBlunt>
-					<armorPenetrationSharp>12.4</armorPenetrationSharp>
+					<power>35</power>
+					<!-- <armorPenetration>0.4</armorPenetration> -->
+					<armorPenetrationSharp>4.2</armorPenetrationSharp>
+					<armorPenetrationBlunt>1.8</armorPenetrationBlunt>
+					<cooldownTime>2.5</cooldownTime>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
@@ -208,18 +209,18 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>10</power>
-					<cooldownTime>1.5</cooldownTime>
-					<armorPenetrationBlunt>4.24</armorPenetrationBlunt>
-					<armorPenetrationSharp>9.41</armorPenetrationSharp>
+					<power>65</power>
+					<!-- <armorPenetration>0.4</armorPenetration> -->
+					<armorPenetrationSharp>4.2</armorPenetrationSharp>
+					<armorPenetrationBlunt>5.4</armorPenetrationBlunt>
+					<cooldownTime>2</cooldownTime>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
-					<chanceFactor>1.5</chanceFactor>
 					<surpriseAttack>
 						<extraMeleeDamages>
 							<li>
 								<def>Cut</def>
 								<amount>40</amount>
-								<armorPenetration>12</armorPenetration>
+								<armorPenetration>18</armorPenetration>
 							</li>
 						</extraMeleeDamages>
 					</surpriseAttack>
@@ -227,12 +228,12 @@
 				<li Class="CombatExtended.ToolCE">
 					<label>handle</label>
 					<capacities>
-						<li>Stab</li>
+						<li>Poke</li>
 					</capacities>
-					<power>9</power>
-					<cooldownTime>1.6</cooldownTime>
-					<chanceFactor>0.10</chanceFactor>
-					<armorPenetrationBlunt>8.12</armorPenetrationBlunt>
+					<power>10</power>
+					<!-- <armorPenetration>0.25</armorPenetration> -->
+					<armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+					<cooldownTime>2.5</cooldownTime>
 					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -251,9 +252,9 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]</xpath>
 		<value>
 			<equippedStatOffsets>
-				<MeleeCritChance>0.5</MeleeCritChance>
-				<MeleeParryChance>0.35</MeleeParryChance>
-				<MeleeDodgeChance>0.15</MeleeDodgeChance>
+				<MeleeCritChance>0.6</MeleeCritChance>
+				<MeleeParryChance>0.7</MeleeParryChance>
+				<MeleeDodgeChance>0.4</MeleeDodgeChance>
 			</equippedStatOffsets>
 		</value>
 	</Operation>
@@ -265,17 +266,18 @@
 				<li>
 					<def>Cut</def>
 					<amount>10</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 				<li>
 					<def>Flame</def>
 					<amount>5</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 			</extraMeleeDamages>
 		</value>
 		
 	</Operation>
+
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_IndigoFlower"]/comps/li[@Class="Axolotl.CompProperties_LotiQiCloseCombatWeapon_ProjectileCost"]/effectToMech/extraMeleeDamages</xpath>
 		<value>
@@ -283,12 +285,12 @@
 				<li>
 					<def>Cut</def>
 					<amount>12.5</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 				<li>
 					<def>EMP</def>
 					<amount>10</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 			</extraMeleeDamages>
 		</value>
@@ -299,43 +301,45 @@
 	
 	<!-- Patch stats -->
 	<!--///磐岩戟-->
-
+	
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_Rockforge_Halberd"]/tools</xpath>
 		<value>
 			<tools>
 				<li Class="CombatExtended.ToolCE">
-					<label>spik</label>
+					<label>spike</label>
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>18</power>
-					<cooldownTime>2.5</cooldownTime>
-					<armorPenetrationBlunt>3.26</armorPenetrationBlunt>
-					<armorPenetrationSharp>11.15</armorPenetrationSharp>
+					<power>95</power>
+					<!-- <armorPenetration>0.6</armorPenetration> -->
+					<armorPenetrationSharp>6.2</armorPenetrationSharp>
+					<armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+					<cooldownTime>2.2</cooldownTime>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
-					<label>edge</label>
+					<label>Halberd blade</label>
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>12</power>
-					<cooldownTime>1.6</cooldownTime>
-					<armorPenetrationBlunt>6.3</armorPenetrationBlunt>
-					<armorPenetrationSharp>9.69</armorPenetrationSharp>
+					<power>95</power>
+					<!-- <armorPenetration>0.6</armorPenetration> -->
+					<armorPenetrationSharp>3.5</armorPenetrationSharp>
+					<armorPenetrationBlunt>10.8</armorPenetrationBlunt>
+					<cooldownTime>2.2</cooldownTime>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
-					<label>shaft</label>
+					<label>Halberd handle</label>
 					<capacities>
-						<li>Blunt</li>
+						<li>Poke</li>
 					</capacities>
-					<power>11</power>
-					<cooldownTime>2.2</cooldownTime>
-					<armorPenetrationBlunt>10.2</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.3</armorPenetrationSharp>
-					<linkedBodyPartsGroup>Shaft</linkedBodyPartsGroup>
+					<power>15</power>
+					<!-- <armorPenetration>0.4</armorPenetration> -->
+					<armorPenetrationBlunt>4.0</armorPenetrationBlunt>
+					<cooldownTime>2</cooldownTime>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
 			</tools>
 		</value>
@@ -344,7 +348,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Rockforge_Halberd"]/statBases</xpath>
 		<value>
-			<Bulk>10</Bulk>
+			<Bulk>18</Bulk>
 			<MeleeCounterParryBonus>1.08</MeleeCounterParryBonus>
 		</value>
 	</Operation>
@@ -352,9 +356,9 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Rockforge_Halberd"]/equippedStatOffsets</xpath>
 		<value>
-			<MeleeCritChance>0.22</MeleeCritChance>
-			<MeleeParryChance>0.75</MeleeParryChance>
-			<MeleeDodgeChance>0</MeleeDodgeChance>
+			<MeleeCritChance>0.3</MeleeCritChance>
+			<MeleeParryChance>1.0</MeleeParryChance>
+			<MeleeDodgeChance>-0.2</MeleeDodgeChance>
 		</value>
 	</Operation>
 	
@@ -371,43 +375,35 @@
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>6</power>
-					<chanceFactor>0.33</chanceFactor>
-					<cooldownTime>0.86</cooldownTime>
-					<armorPenetrationSharp>3.42</armorPenetrationSharp>
-					<armorPenetrationBlunt>0.120</armorPenetrationBlunt>
-					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+					<power>10</power>
+					<!-- <armorPenetration>0.5</armorPenetration> -->
+					<armorPenetrationSharp>5.5</armorPenetrationSharp>
+					<armorPenetrationBlunt>0.25</armorPenetrationBlunt>
+					<cooldownTime>0.45</cooldownTime>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
 					<label>blade</label>
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>4</power>
-					<cooldownTime>0.72</cooldownTime>
-					<armorPenetrationBlunt>0.36</armorPenetrationBlunt>
-					<armorPenetrationSharp>4.9</armorPenetrationSharp>
-					<linkedBodyPartsGroup>Blade</linkedBodyPartsGroup>
-					<surpriseAttack>
-						<extraMeleeDamages>
-							<li>
-								<def>Cut</def>
-								<amount>20</amount>
-								<armorPenetration>5.0</armorPenetration>
-							</li>
-						</extraMeleeDamages>
-					</surpriseAttack>
+					<power>8</power>
+					<!-- <armorPenetration>0.3</armorPenetration> -->
+					<armorPenetrationSharp>1.8</armorPenetrationSharp>
+					<armorPenetrationBlunt>0.15</armorPenetrationBlunt>
+					<cooldownTime>0.45</cooldownTime>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
 					<label>handle</label>
 					<capacities>
-						<li>Stab</li>
+						<li>Poke</li>
 					</capacities>
-					<power>7</power>
-					<cooldownTime>1.0</cooldownTime>
-					<armorPenetrationBlunt>0.25</armorPenetrationBlunt>
-					<armorPenetrationSharp>6.25</armorPenetrationSharp>
-					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+					<power>2</power>
+					<!-- <armorPenetration>0.2</armorPenetration> -->
+					<armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+					<cooldownTime>0.3</cooldownTime>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
 			</tools>
 		</value>
@@ -424,11 +420,8 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Axolotl_Turquoise_shadow"]/equippedStatOffsets</xpath>
 		<value>
-			<MeleeCritChance>0.5</MeleeCritChance>
+			<MeleeCritChance>0.8</MeleeCritChance>
 			<MeleeParryChance>0.35</MeleeParryChance>
-			<!--
-								<MeleeDodgeChance>0.45</MeleeDodgeChance>
-			-->
 		</value>
 	</Operation>
 	
@@ -458,12 +451,12 @@
 				<li>
 					<def>Cut</def>
 					<amount>1.5</amount>
-					<armorPenetration>8</armorPenetration>
+					<armorPenetration>12</armorPenetration>
 				</li>
 				<li>
 					<def>Cut</def>
 					<amount>1.5</amount>
-					<armorPenetration>8</armorPenetration>
+					<armorPenetration>12</armorPenetration>
 				</li>
 			</extraMeleeDamages>
 		</value>
@@ -476,17 +469,17 @@
 				<li>
 					<def>Cut</def>
 					<amount>3</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 				<li>
 					<def>Cut</def>
 					<amount>3</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 				<li>
 					<def>Cut</def>
 					<amount>3</amount>
-					<armorPenetration>12</armorPenetration>
+					<armorPenetration>18</armorPenetration>
 				</li>
 			</extraMeleeDamages>
 		</value>
@@ -506,45 +499,34 @@
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>20</power>
-					<cooldownTime>2</cooldownTime>
-					<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
-					<armorPenetrationSharp>35.71</armorPenetrationSharp>
+					<power>70</power>
+					<!-- <armorPenetration>1.2</armorPenetration> -->
+					<armorPenetrationSharp>28.0</armorPenetrationSharp>
+					<armorPenetrationBlunt>4.5</armorPenetrationBlunt>
+					<cooldownTime>2.5</cooldownTime>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
-					<extraMeleeDamages>
-						<li>
-							<def>Flame</def>
-							<amount>25</amount>
-						</li>
-					</extraMeleeDamages>
 				</li>
 				<li Class="CombatExtended.ToolCE">
 					<label>edge</label>
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>17</power>
-					<cooldownTime>1.66</cooldownTime>
-					<armorPenetrationBlunt>6.272</armorPenetrationBlunt>
-					<armorPenetrationSharp>26.45</armorPenetrationSharp>
+					<power>70</power>
+					<!-- <armorPenetration>0.5</armorPenetration> -->
+					<armorPenetrationSharp>20.0</armorPenetrationSharp>
+					<armorPenetrationBlunt>8.2</armorPenetrationBlunt>
+					<cooldownTime>2.5</cooldownTime>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
-					<extraMeleeDamages>
-						<li>
-							<def>Flame</def>
-							<amount>28</amount>
-						</li>
-					</extraMeleeDamages>
 				</li>
 				<li Class="CombatExtended.ToolCE">
 					<label>handle</label>
 					<capacities>
-						<li>Stab</li>
+						<li>Poke</li>
 					</capacities>
-					<power>12</power>
-					<chanceFactor>0.33</chanceFactor>
-					<cooldownTime>1.8</cooldownTime>
-					<armorPenetrationBlunt>12.425</armorPenetrationBlunt>
-					<armorPenetrationSharp>4.5</armorPenetrationSharp>
+					<power>18</power>
+					<!-- <armorPenetration>0.25</armorPenetration> -->
+					<armorPenetrationBlunt>4.0</armorPenetrationBlunt>
+					<cooldownTime>2</cooldownTime>
 					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -555,7 +537,7 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]/statBases</xpath>
 		<value>
 			<Bulk>10</Bulk>
-			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
+			<MeleeCounterParryBonus>1.0</MeleeCounterParryBonus>
 		</value>
 	</Operation>
 	
@@ -563,9 +545,9 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_Flame_VermilionBird_Machete"]</xpath>
 		<value>
 			<equippedStatOffsets>
-				<MeleeCritChance>0.5</MeleeCritChance>
-				<MeleeParryChance>0.25</MeleeParryChance>
-				<MeleeDodgeChance>0.2</MeleeDodgeChance>
+				<MeleeCritChance>0.7</MeleeCritChance>
+				<MeleeParryChance>0.8</MeleeParryChance>
+				<MeleeDodgeChance>0.3</MeleeDodgeChance>
 			</equippedStatOffsets>
 		</value>
 	</Operation>
