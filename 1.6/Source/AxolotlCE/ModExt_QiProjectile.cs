@@ -11,5 +11,5 @@ namespace AxolotlCE;
 
 public class ModExt_QiProjectile : DefModExtension
 {
-  public ThingDef projectile;
+    public ThingDef projectile;
 }

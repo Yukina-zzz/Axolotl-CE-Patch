@@ -1,11 +1,9 @@
 ﻿using RimWorld;
-using Verse;
-
-using UnityEngine;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using Verse;
 using Verse.Sound;
 
 namespace Axolotl
@@ -45,10 +43,10 @@ namespace Axolotl
 
             //范围内的角色受伤
             IEnumerable<Pawn> targetPawns = (from x in GetPawn.Map.mapPawns.AllPawnsSpawned
-                                      where TargetPosition.Contains(x.Position)
-                                         && !x.Equals(GetPawn)
-                                         && !(AxolotlModSetting.isMoeLotlAbilityNotHitFriend && x.Faction == GetPawn.Faction)
-                                      select x);
+                                             where TargetPosition.Contains(x.Position)
+                                                && !x.Equals(GetPawn)
+                                                && !(AxolotlModSetting.isMoeLotlAbilityNotHitFriend && x.Faction == GetPawn.Faction)
+                                             select x);
             List<FleckDef> list_usefleck = new List<FleckDef>
             {
                 AxolotlFleckDefOf.Axolotl_CounterAttack_one,

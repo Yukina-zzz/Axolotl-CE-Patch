@@ -1,18 +1,18 @@
 ﻿using Axolotl;
 using CombatExtended;
-using Verse;
 using RigorMortis;
 using System;
 using System.Linq;
+using Verse;
 
 namespace AxolotlCE;
 
 public class RMCE_AntiZombieBullet_Qied : BulletCE
 {
-    
+
     public override void Impact(Thing hitThing)
     {
-        
+
         base.Impact(hitThing);
         Pawn zombie = hitThing as Pawn;
         if (zombie != null && RMUtility.IsZombie(hitThing as Pawn, out int zombieLevel))
@@ -20,7 +20,7 @@ public class RMCE_AntiZombieBullet_Qied : BulletCE
             ModExtension_TaoistArtifact modEx = this.equipmentDef.GetModExtension<ModExtension_TaoistArtifact>();
             if (modEx != null)
             {
-                RMUtility.ChangeMalevolent(zombie,modEx.MalevolentDamage);
+                RMUtility.ChangeMalevolent(zombie, modEx.MalevolentDamage);
             }
         }
         foreach (LotiQiBulletComp comp in this.GetComps<LotiQiBulletComp>())
@@ -29,5 +29,5 @@ public class RMCE_AntiZombieBullet_Qied : BulletCE
             comp.Impact(this.launcher, hitThing, false);
         }
     }
-    
+
 }

@@ -1,15 +1,15 @@
 ﻿using Axolotl;
 using CombatExtended;
-using Verse;
 using RigorMortis;
 using System;
 using System.Linq;
+using Verse;
 
 namespace AxolotlCE;
 
-public class RMCE_AntiZombieBullet: BulletCE
+public class RMCE_AntiZombieBullet : BulletCE
 {
-    
+
     /*
     public Pawn GetPawn
     {
@@ -28,7 +28,7 @@ public class RMCE_AntiZombieBullet: BulletCE
             ModExtension_TaoistArtifact modEx = this.equipmentDef.GetModExtension<ModExtension_TaoistArtifact>();
             if (modEx != null)
             {
-                RMUtility.ChangeMalevolent(zombie,modEx.MalevolentDamage);
+                RMUtility.ChangeMalevolent(zombie, modEx.MalevolentDamage);
             }
         }
     }

@@ -1,14 +1,12 @@
 ﻿using RimWorld;
-using Verse;
-
-using UnityEngine;
-
 using System;
 using System.Collections.Generic;
-using static RimWorld.Building_HoldingPlatform;
-using Verse.Noise;
-using static UnityEngine.GraphicsBuffer;
 using System.Linq;
+using UnityEngine;
+using Verse;
+using Verse.Noise;
+using static RimWorld.Building_HoldingPlatform;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Axolotl
 {
@@ -172,7 +170,7 @@ namespace Axolotl
                         Faction.OfPlayer.TryAffectGoodwillWith(faction, -200, true, true, HistoryEventDefOf.UsedHarmfulItem, null);
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     Debug.WarningInTry("轰天雷造成伤害-掉派系关系错误", e);
                 }

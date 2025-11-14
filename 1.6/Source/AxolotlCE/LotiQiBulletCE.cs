@@ -13,13 +13,13 @@ namespace AxolotlCE;
 
 public class LotiQiBulletCE : BulletCE
 {
-  public override void Impact(Thing hitThing)
-  {
-    base.Impact(hitThing);
-    foreach (LotiQiBulletComp comp in this.GetComps<LotiQiBulletComp>())
+    public override void Impact(Thing hitThing)
     {
-      comp.Launcher = this.launcher as Pawn;
-      comp.Impact(this.launcher, hitThing, false);
+        base.Impact(hitThing);
+        foreach (LotiQiBulletComp comp in this.GetComps<LotiQiBulletComp>())
+        {
+            comp.Launcher = this.launcher as Pawn;
+            comp.Impact(this.launcher, hitThing, false);
+        }
     }
-  }
 }

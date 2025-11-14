@@ -13,24 +13,24 @@ namespace AxolotlCE;
 
 public class BulletWithToxicCE : BulletCE
 {
-  private Hediff GetPawnHediff(Pawn pawn, HediffDef hediff)
-  {
-    return pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
-  }
-
-  public override void Impact(Thing hitThing)
-  {
-    base.Impact(hitThing);
-    if (!(hitThing is Pawn))
-      return;
-    Pawn pawn = hitThing as Pawn;
-    if (pawn.RaceProps.IsMechanoid)
-      return;
-    if (this.GetPawnHediff(pawn, HediffDefOf.ToxicBuildup) == null)
+    private Hediff GetPawnHediff(Pawn pawn, HediffDef hediff)
     {
-      pawn.health.AddHediff(HediffDefOf.ToxicBuildup);
-      this.GetPawnHediff(pawn, HediffDefOf.ToxicBuildup).Severity = 0.03f;
+        return pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
     }
-    this.GetPawnHediff(pawn, HediffDefOf.ToxicBuildup).Severity += 0.03f;
-  }
+
+    public override void Impact(Thing hitThing)
+    {
+        base.Impact(hitThing);
+        if (!(hitThing is Pawn))
+            return;
+        Pawn pawn = hitThing as Pawn;
+        if (pawn.RaceProps.IsMechanoid)
+            return;
+        if (this.GetPawnHediff(pawn, HediffDefOf.ToxicBuildup) == null)
+        {
+            pawn.health.AddHediff(HediffDefOf.ToxicBuildup);
+            this.GetPawnHediff(pawn, HediffDefOf.ToxicBuildup).Severity = 0.03f;
+        }
+        this.GetPawnHediff(pawn, HediffDefOf.ToxicBuildup).Severity += 0.03f;
+    }
 }

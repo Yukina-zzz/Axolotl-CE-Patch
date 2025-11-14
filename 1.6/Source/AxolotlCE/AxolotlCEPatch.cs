@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using static Verse.DamageWorker;
 
 namespace AxolotlCE
 {
@@ -19,6 +20,12 @@ namespace AxolotlCE
             var harmony = new Harmony("com.AxolotlCEPatch");
             harmony.PatchAll();
         }
+    }
+
+    public static class AxolotlCEPatchContext
+    {
+        //螈力模式攻击目标部位
+        public static BodyPartRecord GiveMechDamageIfNotHave_HitBodyPart = null;
     }
 
     //百花印爆炸穿透
@@ -39,13 +46,12 @@ namespace AxolotlCE
 
     //近战螈力模式 (CE 版本)
     // 目标类从原版的 Verb_MeleeAttack 修改为 CE 的 Verb_MeleeAttackCE
-    [HarmonyPatch(typeof(Verb_MeleeAttackCE))]
-    [HarmonyPatch("ApplyMeleeDamageToTarget", MethodType.Normal)]
+    [HarmonyPatch(typeof(Verb_MeleeAttackCE), nameof(Verb_MeleeAttackCE.ApplyMeleeDamageToTarget))]
     public static class Verb_MeleeAttackCE_ApplyMeleeDamageToTarget_Patch
     {
         [HarmonyPostfix]
         // __instance 的类型从 Verb_MeleeAttack 修改为 Verb_MeleeAttackCE
-        private static void Postfix(LocalTargetInfo target, Verb_MeleeAttackCE __instance)
+        private static void Postfix(LocalTargetInfo target, Verb_MeleeAttackCE __instance, DamageResult __result)
         {
             // 获取使用者
             Pawn user = __instance.CasterPawn;
@@ -65,8 +71,12 @@ namespace AxolotlCE
 
                     if (comp != null && comp.PawnHaveHediff && comp.IsChangeLotiWeaponMode && comp_weapon != null)
                     {
+                        //获取第一个受击部位给武器的螈力模式
+                        //肾 躯干 受击部位列表一般这样排序的
+                        AxolotlCEPatchContext.GiveMechDamageIfNotHave_HitBodyPart = __result.parts.FirstOrDefault();
+
                         //伤害信息
-                        float num = __instance.verbProps.AdjustedMeleeDamageAmount(__instance, __instance.CasterPawn);
+                        float num = __instance.ToolCE.power;
                         float armorPenetration = __instance.verbProps.AdjustedArmorPenetration(__instance, __instance.CasterPawn);
 
                         //执行效果
@@ -76,5 +86,128 @@ namespace AxolotlCE
             }
         }
     }
+
+    // 使用Harmony Prefix重写Comp_LotiQiCloseCombatWeapon_ProjectileCost.ApplyEffectToTarget方法
+    [HarmonyPatch(typeof(Comp_LotiQiCloseCombatWeapon_ProjectileCost), nameof(Comp_LotiQiCloseCombatWeapon_ProjectileCost.ApplyEffectToTarget))]
+    public static class Comp_LotiQiCloseCombatWeapon_ProjectileCost_ApplyEffectToTarget_Patch_CE
+    {
+        // 使用Prefix并返回false来完全阻止并替换原方法的执行
+        [HarmonyPrefix]
+        public static bool Prefix(Comp_LotiQiCloseCombatWeapon_ProjectileCost __instance, Thing targetThing, Pawn instigator, float damageAmount, float armorPenetration)
+        {
+            if (targetThing is Pawn targetPawn)
+            {
+                if (targetPawn.Dead) return false;
+
+                //如果目标是友方并且使用者未征召（斗殴状态）
+                if (targetPawn.Faction == instigator.Faction && !instigator.Drafted) return false;
+
+                ////扣除螈力并自检
+                //扣除螈力
+                if (!AxolotlUtility.MoelotlEnergyUtility.DoEnergyCost(instigator, __instance.Props.costPerHit))
+                {
+                    //扣除失败
+                    return false;
+                }
+                //扣除成功执行自动判断程序
+                instigator.TryGetComp<CompAxolotlEnergy>().AutoCloseLotlQiWeaponMode();
+
+                //使用特效
+                try
+                {
+                    if (__instance.Props.fleckDefsOnHitPawn.Any())
+                    {
+                        FleckMaker.Static(targetPawn.DrawPos, targetPawn.Map, __instance.Props.fleckDefsOnHitPawn.RandomElement());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.WarningInTry("近战螈力模式-绘制集种fleck错误", e);
+                }
+
+                //螈力混乱
+                //机械|无人机
+                if (targetPawn.RaceProps.IsMechanoid || targetPawn.RaceProps.IsDrone)
+                {
+                    // CE修改: 不再获取大脑, 而是直接使用由Verb_MeleeAttackCE Patch传入的受击部位
+                    //不再使用DPS作为伤害,而是使用当前攻击的基础伤害/5
+                    LotiQiBulletComp_LotiQiConfusion.GiveMechDamageIfNotHave(targetPawn, instigator, AxolotlCEPatchContext.GiveMechDamageIfNotHave_HitBodyPart, damageAmount/5, __instance.parent);
+                }
+                //非机械
+                else
+                {
+                    // 对于非机械单位, 仍然以大脑为目标
+                    // 烧伤且伤害很低,暂且不管
+                    BodyPartRecord bodyPart = targetPawn.health.hediffSet.GetBrain();
+                    LotiQiBulletComp_LotiQiConfusion.GivePawnHediffIfNotHave(targetPawn, instigator, AxolotlHediffDefOf.Axolotl_LotiQiConfusion, bodyPart, __instance.parent);
+                }
+
+                //获取目标对应effect
+                CloseCombatWeaponEffect effectParameter = targetPawn.RaceProps.IsMechanoid ? __instance.Props.effectToMech : __instance.Props.effectToPawn;
+
+                if (targetPawn.Dead) return false;
+
+                //给予hediff
+                __instance.TryGivePawnHediffs(targetPawn, instigator, effectParameter);
+
+                if (targetPawn.Dead) return false;
+
+                //给予伤害
+                __instance.TryGivePawnDamges(targetPawn, instigator, effectParameter);
+            }
+            else if (targetThing is Building hitBuilding)
+            {
+                if (hitBuilding.DestroyedOrNull()) return false;
+
+                //砸家具状态
+                if (hitBuilding.Faction == instigator.Faction && !instigator.Drafted) return false;
+
+                ////扣除螈力并自检
+                //扣除螈力
+                if (!AxolotlUtility.MoelotlEnergyUtility.DoEnergyCost(instigator, __instance.Props.costPerHit))
+                {
+                    //扣除失败
+                    return false;
+                }
+                //扣除成功执行自动判断程序
+                instigator.TryGetComp<CompAxolotlEnergy>().AutoCloseLotlQiWeaponMode();
+
+                //使用特效
+                try
+                {
+                    if (__instance.Props.fleckDefsOnHitPawn.Any())
+                    {
+                        FleckMaker.Static(hitBuilding.DrawPos, hitBuilding.Map, __instance.Props.fleckDefsOnHitPawn.RandomElement());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.WarningInTry("近战螈力模式-绘制集种fleck错误", e);
+                }
+
+                if (hitBuilding.DestroyedOrNull()) return false;
+
+                //给予伤害
+                __instance.TryGiveBuildingDamges(hitBuilding, instigator, __instance.Props.effectToMech);
+            }
+
+            return false;
+        }
+    }
+
+    //修改螈力模式对机械体emp伤害的目标部位,原两个调用方法都是直接锁大脑的还是emp伤害
+    //[HarmonyPatch(typeof(LotiQiBulletComp_LotiQiConfusion), nameof(LotiQiBulletComp_LotiQiConfusion.GiveMechDamageIfNotHave))]
+    //public static class LotiQiBulletComp_LotiQiConfusion_GiveMechDamageIfNotHave_Patch
+    //{
+    //    [HarmonyPrefix]
+    //    public static bool Prefix(Pawn targetPawn, Pawn instigator, ref BodyPartRecord bodypart, float DamageAmount, Thing weapon)
+    //    {
+    //        bodypart = AxolotlCEPatchContext.GiveMechDamageIfNotHave_HitBodyPart;
+    //        return true;
+    //    }
+    //}
+
+
+
 
 }

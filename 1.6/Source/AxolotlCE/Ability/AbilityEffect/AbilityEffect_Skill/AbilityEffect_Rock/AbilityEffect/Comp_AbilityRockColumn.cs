@@ -1,16 +1,14 @@
 ﻿using RimWorld;
-using Verse;
-
-using UnityEngine;
-
-using System;
-using Verse.Noise;
-using System.Collections;
-using System.Linq;
-using System.Collections.Generic;
 using RimWorld.Utility;
-using static UnityEngine.GraphicsBuffer;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using Verse;
 using Verse.AI;
+using Verse.Noise;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Axolotl
 {
@@ -46,7 +44,7 @@ namespace Axolotl
                 //如果角色没有等级但是持有技能
                 //使用就会导致错误
 
-                if(_pawnSkillLevel == -1)
+                if (_pawnSkillLevel == -1)
                 {
                     _pawnSkillLevel = Mathf.Max(1, MoeLotlQiSkillUtility.GetMoeLotlQiSkillLevel(GetPawn, AxolotlMoelotlQiSkillDefOf.Axolotl_MainSkill_Rock));
                 }
@@ -151,7 +149,7 @@ namespace Axolotl
 
                     //下身伤害
                     IEnumerable<BodyPartRecord> targetBodyPart = targetPawn.health.hediffSet.GetNotMissingParts(BodyPartHeight.Bottom, BodyPartDepth.Outside).Where(part => !part.def.conceptual);
-                    if(targetBodyPart.Any())
+                    if (targetBodyPart.Any())
                     {
                         for (int j = 0; j < randomHitPart && !targetPawn.Dead; j++)
                         {
@@ -179,7 +177,7 @@ namespace Axolotl
 
         public override void DrawEffectPreview(LocalTargetInfo target)
         {
-            if(this.Valid(target))
+            if (this.Valid(target))
             {
                 //绘制高亮
                 GenDraw.DrawTargetHighlightWithLayer(target.CenterVector3, AltitudeLayer.MetaOverlays);
