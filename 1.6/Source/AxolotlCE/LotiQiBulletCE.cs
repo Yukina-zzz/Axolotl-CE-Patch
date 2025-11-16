@@ -18,8 +18,28 @@ public class LotiQiBulletCE : BulletCE
         base.Impact(hitThing);
         foreach (LotiQiBulletComp comp in this.GetComps<LotiQiBulletComp>())
         {
+
+            //fork ce的获取受击部位 
+            if (hitThing != null && hitThing is Pawn hitPawn)
+            { 
+                var damDefCE = def.projectile.damageDef.GetModExtension<DamageDefExtensionCE>() ?? new DamageDefExtensionCE();
+
+                BodyPartHeight partHeight = new CollisionVertical(hitThing).GetCollisionBodyHeight(ExactPosition.y);
+
+                BodyPartDepth partDepth = damDefCE.harmOnlyOutsideLayers ? BodyPartDepth.Outside : BodyPartDepth.Undefined;
+
+                var dinfoForLocating = new DamageInfo(def.projectile.damageDef, 0);
+                dinfoForLocating.SetBodyRegion(partHeight, partDepth);
+
+                BodyPartRecord finalHitPart = hitPawn.health.hediffSet.GetRandomNotMissingPart(dinfoForLocating.Def, dinfoForLocating.Height, dinfoForLocating.Depth);
+
+                AxolotlCEPatchContext.LotiQiImpactAttackCE_HitBodyPart = finalHitPart;
+            }
+
+
             comp.Launcher = this.launcher as Pawn;
             comp.Impact(this.launcher, hitThing, false);
+
         }
     }
 }

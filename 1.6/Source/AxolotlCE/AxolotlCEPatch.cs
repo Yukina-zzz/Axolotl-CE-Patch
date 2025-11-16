@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using static Verse.DamageWorker;
 
@@ -24,8 +25,31 @@ namespace AxolotlCE
 
     public static class AxolotlCEPatchContext
     {
-        //螈力模式攻击目标部位
-        public static BodyPartRecord GiveMechDamageIfNotHave_HitBodyPart = null;
+        //近战螈力模式攻击目标部位
+        public static BodyPartRecord LotiQiMeleeAttackCE_HitBodyPart = null;
+        //近战螈力模式攻击目标部位
+        public static BodyPartRecord LotiQiImpactAttackCE_HitBodyPart = null;
+
+
+        //fork by LotiQiBulletComp_LotiQiConfusion.GiveMechDamageIfNotHave
+        public static void GiveMechDamageIfNotHave(Pawn targetPawn, Pawn instigator, BodyPartRecord bodypart, float DamageAmount, Thing weapon)
+        {
+            Vector3 direction = (targetPawn.Position - instigator.Position).ToVector3();
+            ////控制
+            //保底伤害的思路逃过复杂且没用
+            //这里替换为实用性较强的眩晕控制
+            DamageInfo info_emp = new DamageInfo(DamageDefOf.EMP, DamageAmount, 2.0f, -1f, instigator, bodypart, weapon.def, DamageInfo.SourceCategory.ThingOrUnknown, targetPawn, true, true, weaponQuality: weapon.TryGetQuality(out QualityCategory qc_emp) ? qc_emp : QualityCategory.Normal, true);
+            info_emp.SetAngle(direction);
+            targetPawn.TakeDamage(info_emp);
+
+            ////机械族特伤
+            //机械族心灵敏感度固定为0.5，蜈蚣为0.75，似乎与体型有关
+            //没有心灵敏感就算做0.5f
+            float severity = targetPawn.GetStatValue(StatDefOf.PsychicSensitivity, true, -1);
+            DamageInfo info_damage = new DamageInfo(DamageDefOf.Bomb, (severity == 0 ? 0.5f : severity), 2.0f, -1f, instigator, bodypart, weapon.def, DamageInfo.SourceCategory.ThingOrUnknown, targetPawn, true, true, weaponQuality: weapon.TryGetQuality(out QualityCategory qc_damage) ? qc_damage : QualityCategory.Normal, true);
+            info_damage.SetAngle(direction);
+            targetPawn.TakeDamage(info_damage);
+        }
     }
 
     //百花印爆炸穿透
@@ -44,7 +68,18 @@ namespace AxolotlCE
         }
     }
 
-    //近战螈力模式 (CE 版本)
+    //让原螈力模式对机械族造成伤害方法为空,换用自己fork过来的
+    [HarmonyPatch(typeof(LotiQiBulletComp_LotiQiConfusion), nameof(LotiQiBulletComp_LotiQiConfusion.GiveMechDamageIfNotHave))]
+    public static class LotiQiBulletComp_LotiQiConfusion_GiveMechDamageIfNotHave_Patch
+    {
+        [HarmonyPrefix]
+        public static bool Prefix(Pawn targetPawn, Pawn instigator, ref BodyPartRecord bodypart, float DamageAmount, Thing weapon)
+        {
+            return false;
+        }
+    }
+
+    //近战武器螈力模式 (CE 版本)
     // 目标类从原版的 Verb_MeleeAttack 修改为 CE 的 Verb_MeleeAttackCE
     [HarmonyPatch(typeof(Verb_MeleeAttackCE), nameof(Verb_MeleeAttackCE.ApplyMeleeDamageToTarget))]
     public static class Verb_MeleeAttackCE_ApplyMeleeDamageToTarget_Patch
@@ -73,7 +108,7 @@ namespace AxolotlCE
                     {
                         //获取第一个受击部位给武器的螈力模式
                         //肾 躯干 受击部位列表一般这样排序的
-                        AxolotlCEPatchContext.GiveMechDamageIfNotHave_HitBodyPart = __result.parts.FirstOrDefault();
+                        AxolotlCEPatchContext.LotiQiMeleeAttackCE_HitBodyPart = __result.parts.FirstOrDefault();
 
                         //伤害信息
                         float num = __instance.ToolCE.power;
@@ -122,7 +157,7 @@ namespace AxolotlCE
                 }
                 catch (Exception e)
                 {
-                    Debug.WarningInTry("近战螈力模式-绘制集种fleck错误", e);
+                    Axolotl.Debug.WarningInTry("近战螈力模式-绘制集种fleck错误", e);
                 }
 
                 //螈力混乱
@@ -131,7 +166,7 @@ namespace AxolotlCE
                 {
                     // CE修改: 不再获取大脑, 而是直接使用由Verb_MeleeAttackCE Patch传入的受击部位
                     //不再使用DPS作为伤害,而是使用当前攻击的基础伤害/5
-                    LotiQiBulletComp_LotiQiConfusion.GiveMechDamageIfNotHave(targetPawn, instigator, AxolotlCEPatchContext.GiveMechDamageIfNotHave_HitBodyPart, damageAmount/5, __instance.parent);
+                    AxolotlCEPatchContext.GiveMechDamageIfNotHave(targetPawn, instigator, AxolotlCEPatchContext.LotiQiMeleeAttackCE_HitBodyPart, damageAmount / 5, __instance.parent);
                 }
                 //非机械
                 else
@@ -182,7 +217,7 @@ namespace AxolotlCE
                 }
                 catch (Exception e)
                 {
-                    Debug.WarningInTry("近战螈力模式-绘制集种fleck错误", e);
+                    Axolotl.Debug.WarningInTry("近战螈力模式-绘制集种fleck错误", e);
                 }
 
                 if (hitBuilding.DestroyedOrNull()) return false;
@@ -195,19 +230,24 @@ namespace AxolotlCE
         }
     }
 
-    //修改螈力模式对机械体emp伤害的目标部位,原两个调用方法都是直接锁大脑的还是emp伤害
-    //[HarmonyPatch(typeof(LotiQiBulletComp_LotiQiConfusion), nameof(LotiQiBulletComp_LotiQiConfusion.GiveMechDamageIfNotHave))]
-    //public static class LotiQiBulletComp_LotiQiConfusion_GiveMechDamageIfNotHave_Patch
-    //{
-    //    [HarmonyPrefix]
-    //    public static bool Prefix(Pawn targetPawn, Pawn instigator, ref BodyPartRecord bodypart, float DamageAmount, Thing weapon)
-    //    {
-    //        bodypart = AxolotlCEPatchContext.GiveMechDamageIfNotHave_HitBodyPart;
-    //        return true;
-    //    }
-    //}
+    //螈力模式远程武器
+    [HarmonyPatch(typeof(LotiQiBulletComp_LotiQiConfusion), nameof(LotiQiBulletComp_LotiQiConfusion.Impact))]
+    public static class LotiQiBulletComp_LotiQiConfusion_Impact_Patch
+    {
+        [HarmonyPostfix]
+        private static void Postfix(LotiQiBulletComp_LotiQiConfusion __instance, Thing instigator, Thing hitThing, bool blockedByShield)
+        {
+            if (!blockedByShield)
+                if (hitThing is Pawn hitPawn && hitPawn != null)
+                    if (hitPawn.RaceProps.IsMechanoid || hitPawn.RaceProps.IsDrone)
+                    {
+                        Pawn launcher = instigator as Pawn;
+                        Thing weapon = __instance.parent;
 
+                        //BodyPartRecord bodyPart = hitPawn.health.hediffSet.GetBrain();
 
-
-
+                        AxolotlCEPatchContext.GiveMechDamageIfNotHave(hitPawn, launcher, AxolotlCEPatchContext.LotiQiImpactAttackCE_HitBodyPart, __instance.parent.def.projectile.GetDamageAmount(null)/5, __instance.parent);
+                    }
+        }
+    }
 }

@@ -148,6 +148,9 @@
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<speed>30</speed>
 		</projectile>
+		<comps>
+			<li Class="Axolotl.LotiQiBulletCompProperties_LotiQiConfusion"></li>
+		</comps>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseQiCorssbowBolt">
