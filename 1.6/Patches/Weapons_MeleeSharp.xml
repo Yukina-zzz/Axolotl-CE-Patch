@@ -209,7 +209,7 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>65</power>
+					<power>60</power>
 					<!-- <armorPenetration>0.4</armorPenetration> -->
 					<armorPenetrationSharp>4.2</armorPenetrationSharp>
 					<armorPenetrationBlunt>5.4</armorPenetrationBlunt>
@@ -311,7 +311,7 @@
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>95</power>
+					<power>80</power>
 					<!-- <armorPenetration>0.6</armorPenetration> -->
 					<armorPenetrationSharp>6.2</armorPenetrationSharp>
 					<armorPenetrationBlunt>2.5</armorPenetrationBlunt>
@@ -323,7 +323,7 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>95</power>
+					<power>90</power>
 					<!-- <armorPenetration>0.6</armorPenetration> -->
 					<armorPenetrationSharp>3.5</armorPenetrationSharp>
 					<armorPenetrationBlunt>10.8</armorPenetrationBlunt>
@@ -375,7 +375,7 @@
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>10</power>
+					<power>8</power>
 					<!-- <armorPenetration>0.5</armorPenetration> -->
 					<armorPenetrationSharp>5.5</armorPenetrationSharp>
 					<armorPenetrationBlunt>0.25</armorPenetrationBlunt>
@@ -387,7 +387,7 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>8</power>
+					<power>6</power>
 					<!-- <armorPenetration>0.3</armorPenetration> -->
 					<armorPenetrationSharp>1.8</armorPenetrationSharp>
 					<armorPenetrationBlunt>0.15</armorPenetrationBlunt>

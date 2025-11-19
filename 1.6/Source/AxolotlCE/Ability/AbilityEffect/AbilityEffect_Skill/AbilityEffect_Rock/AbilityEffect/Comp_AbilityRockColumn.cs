@@ -83,7 +83,7 @@ namespace Axolotl
             }
 
             //特效与眩晕效果
-            Action_RockSkilExpolsion(GetPawn, target.Cell, GetTrueStunRange, GetTrueStunSec, 3, 10.0f);
+            Action_RockSkilExpolsion(GetPawn, target.Cell, GetTrueStunRange, GetTrueStunSec, 3, 15.0f);
 
             //生成柱子
             GenSpawn.Spawn(AxolotlThingDefOf.Axolotl_Skill_RockColumn, target.Cell, GetPawn.Map, WipeMode.Vanish);

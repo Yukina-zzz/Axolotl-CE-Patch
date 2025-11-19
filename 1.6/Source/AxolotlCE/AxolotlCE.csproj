@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Ability\AbilityEffect\AbilityEffect_Skill\AbilityEffect_Flower\Verb_AbilityFlowerJump.cs" />
+    <Compile Include="Ability\AbilityEffect\AbilityEffect_Skill\ThingComp_FlowerSlashCore\CompFlowerSlashCore.cs" />
+    <Compile Include="Ability\AbilityEffect\AbilityEffect_Skill\ThingComp_FlowerSlashCore\Compproperties_FlowerSlashCore.cs" />
     <Compile Include="AxolotlCEPatch.cs" />
     <Compile Include="BulletWithToxicCE.cs" />
     <Compile Include="CompAbilityLaunchProjectilesCE.cs" />
@@ -41,11 +44,13 @@
     <Compile Include="Ability\AbilityEffect\AbilityEffect_InstantChop\Comp_AbilityEffect_InstantChop.cs" />
     <Compile Include="Ability\AbilityEffect\AbilityEffect_Skill\AbilityEffect_Rock\AbilityEffect\Comp_AbilityRockColumn.cs" />
     <Compile Include="EXM_Bullet.cs" />
-    <Compile Include="LotiQiBulletCE.cs" />
+    <Compile Include="Thing\ThingComp\ThingComp_LotlQiBullet\LotiQiBulletBase\LotiQiBulletCE.cs" />
     <Compile Include="RMCE_AntiZombieBullet.cs" />
     <Compile Include="RMCE_AntiZombieBullet_Qied.cs" />
     <Compile Include="Thing\ThingComp\ThingComp_Apparel\ThingComp_SpeicalWeapon\ElectromagneticLauncher\CompProperties_TargetEffect_ElectromagneticLauncher.cs" />
     <Compile Include="Thing\ThingComp\ThingComp_Apparel\ThingComp_SpeicalWeapon\ElectromagneticLauncher\CompTargetEffect_ElectromagneticLauncher.cs" />
+    <Compile Include="Thing\ThingComp\ThingComp_LotlQiBullet\LotiQiBulletComp_FluctuateDamage\LotiQiBulletCompProperties_FluctuateDamage.cs" />
+    <Compile Include="Thing\ThingComp\ThingComp_LotlQiBullet\LotiQiBulletComp_FluctuateDamage\LotiQiBulletComp_FluctuateDamage.cs" />
     <Compile Include="Verb_IncanationCrossbowIntensifyShotCE.cs" />
     <Compile Include="Verb_LotiIntensifyShotCE.cs" />
     <Compile Include="ModExt_QiProjectile.cs" />

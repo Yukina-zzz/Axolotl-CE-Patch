@@ -62,8 +62,8 @@ namespace Axolotl
                 targetPawn.TryAttachFire(Rand.Range(0.35f, 0.25f), null);
                 FleckMaker.Static(targetPawn.Position, targetPawn.Map, list_usefleck.RandomElement(), 2.5f);
 
-                //灼炎一闪穿透修改,原穿透1.0f
-                DamageInfo info = new DamageInfo(DamageDefOf.Cut, 40.0f, 50.0f, instigator: GetPawn, weapon: Props.weapon);
+                //灼炎一闪穿透修改,原穿透1.0f伤害40
+                DamageInfo info = new DamageInfo(DamageDefOf.Cut, 50.0f, 50.0f, instigator: GetPawn, weapon: Props.weapon);
                 targetPawn.TakeDamage(info);
             }
         }

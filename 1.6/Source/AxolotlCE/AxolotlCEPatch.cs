@@ -27,7 +27,7 @@ namespace AxolotlCE
     {
         //近战螈力模式攻击目标部位
         public static BodyPartRecord LotiQiMeleeAttackCE_HitBodyPart = null;
-        //近战螈力模式攻击目标部位
+        //远程螈力模式攻击目标部位
         public static BodyPartRecord LotiQiImpactAttackCE_HitBodyPart = null;
 
 
@@ -166,7 +166,7 @@ namespace AxolotlCE
                 {
                     // CE修改: 不再获取大脑, 而是直接使用由Verb_MeleeAttackCE Patch传入的受击部位
                     //不再使用DPS作为伤害,而是使用当前攻击的基础伤害/5
-                    AxolotlCEPatchContext.GiveMechDamageIfNotHave(targetPawn, instigator, AxolotlCEPatchContext.LotiQiMeleeAttackCE_HitBodyPart, damageAmount / 5, __instance.parent);
+                    AxolotlCEPatchContext.GiveMechDamageIfNotHave(targetPawn, instigator, AxolotlCEPatchContext.LotiQiMeleeAttackCE_HitBodyPart, damageAmount / 10, __instance.parent);
                 }
                 //非机械
                 else
@@ -246,7 +246,7 @@ namespace AxolotlCE
 
                         //BodyPartRecord bodyPart = hitPawn.health.hediffSet.GetBrain();
 
-                        AxolotlCEPatchContext.GiveMechDamageIfNotHave(hitPawn, launcher, AxolotlCEPatchContext.LotiQiImpactAttackCE_HitBodyPart, __instance.parent.def.projectile.GetDamageAmount(null)/5, __instance.parent);
+                        AxolotlCEPatchContext.GiveMechDamageIfNotHave(hitPawn, launcher, AxolotlCEPatchContext.LotiQiImpactAttackCE_HitBodyPart, __instance.parent.def.projectile.GetDamageAmount(null)/10, __instance.parent);
                     }
         }
     }

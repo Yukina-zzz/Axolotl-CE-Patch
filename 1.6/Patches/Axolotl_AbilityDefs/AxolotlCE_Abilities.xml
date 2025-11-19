@@ -27,6 +27,54 @@
 			<compClass>AxolotlCE.CompAbilityLaunchProjectilesCE</compClass>
 		</value>
 	</Operation>
+
+	
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>
+			Defs/ThingDef[
+			defName="Bullet_SwordAura" or
+			defName="Bullet_SwordAura_Thunder" or
+			defName="Bullet_SwordAura_Water" or
+			defName="Bullet_SwordAura_Fire" or
+			defName="Bullet_SwordAura_Flower" or
+			defName="Bullet_SwordAura_Rock"
+			]
+		</xpath>
+		<attribute>ParentName</attribute>
+		<value>BaseLotlQiSlashCE</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>
+			Defs/ThingDef[
+			defName="Bullet_SwordAura" or
+			defName="Bullet_SwordAura_Thunder" or
+			defName="Bullet_SwordAura_Water" or
+			defName="Bullet_SwordAura_Fire" or
+			defName="Bullet_SwordAura_Flower" or
+			defName="Bullet_SwordAura_Rock" or
+			defName="Bullet_SwordAura_Flower_Small"
+			]/comps/li[@Class="Axolotl.LotiQiBulletCompProperties_FluctuateDamage"]
+		</xpath>
+		<attribute>Class</attribute>
+		<value>Axolotl.LotiQiBulletCompProperties_FluctuateDamageCE</value>
+	</Operation>
+
+	<!-- ==================== 螈气斩 (基础) ==================== -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_SwordAura"]/projectile</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+				<damageDef>RangedStab</damageDef>
+				<damageAmountBase>20</damageAmountBase>
+				<speed>110</speed>
+				<armorPenetrationBlunt>15</armorPenetrationBlunt>
+				<armorPenetrationSharp>7</armorPenetrationSharp>
+				<castShadow>false</castShadow>
+			</projectile>
+		</value>
+	</Operation>
 	
 	<!-- 仙螈斩 -->
 	<Operation Class="PatchOperationReplace">
@@ -43,38 +91,7 @@
 		</value>
 		
 	</Operation>
-	
-	<Operation Class="PatchOperationAttributeSet">
-		<xpath>
-			Defs/ThingDef[
-			defName="Bullet_SwordAura" or
-			defName="Bullet_SwordAura_Thunder" or
-			defName="Bullet_SwordAura_Water" or
-			defName="Bullet_SwordAura_Fire" or
-			defName="Bullet_SwordAura_Flower" or
-			defName="Bullet_SwordAura_Rock"
-			]
-		</xpath>
-		<attribute>ParentName</attribute>
-		<value>BaseLotlQiSlashCE</value>
-	</Operation>
-	
-	<!-- ==================== 螈气斩 (基础) ==================== -->
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="Bullet_SwordAura"]/projectile</xpath>
-		<value>
-			<projectile Class="CombatExtended.ProjectilePropertiesCE">
-				<damageDef>RangedStab</damageDef>
-				<damageAmountBase>20</damageAmountBase>
-				<speed>50</speed>
-				<armorPenetrationBlunt>15</armorPenetrationBlunt>
-				<armorPenetrationSharp>7</armorPenetrationSharp>
-				<castShadow>false</castShadow>
-			</projectile>
-		</value>
-	</Operation>
-	
+
 	<!-- ==================== 紫霆斩 (电) ==================== -->
 	
 	<Operation Class="PatchOperationReplace">
@@ -83,7 +100,7 @@
 			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 				<damageDef>RangedStab</damageDef>
 				<damageAmountBase>20</damageAmountBase>
-				<speed>50</speed>
+				<speed>110</speed>
 				<extraDamages>
 					<li>
 						<def>EMP</def>
@@ -107,7 +124,7 @@
 			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 				<damageDef>RangedStab</damageDef>
 				<damageAmountBase>35</damageAmountBase>
-				<speed>50</speed>
+				<speed>110</speed>
 				<armorPenetrationBlunt>20</armorPenetrationBlunt>
 				<armorPenetrationSharp>15</armorPenetrationSharp>
 				<castShadow>false</castShadow>
@@ -123,7 +140,7 @@
 			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 				<damageDef>RangedStab</damageDef>
 				<damageAmountBase>35</damageAmountBase>
-				<speed>50</speed>
+				<speed>110</speed>
 				<extraDamages>
 					<li>
 						<def>Flame</def>
@@ -147,7 +164,7 @@
 			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 				<damageDef>RangedStab</damageDef>
 				<damageAmountBase>35</damageAmountBase>
-				<speed>50</speed>
+				<speed>110</speed>
 				<armorPenetrationBlunt>50</armorPenetrationBlunt>
 				<armorPenetrationSharp>15</armorPenetrationSharp>
 				<castShadow>false</castShadow>
@@ -161,12 +178,27 @@
 		<value>
 			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 				<damageDef>RangedStab</damageDef>
-				<damageAmountBase>2</damageAmountBase>
-				<armorPenetrationSharp>1.5</armorPenetrationSharp>
-				<armorPenetrationBlunt>2</armorPenetrationBlunt>
+				<damageAmountBase>4</damageAmountBase>
+				<armorPenetrationBlunt>10</armorPenetrationBlunt>
+				<armorPenetrationSharp>4.5</armorPenetrationSharp>
 				<speed>90</speed>
 			</projectile>
 		</value>
+	</Operation>
+	
+	<!-- ==================== 残花疏影 ==================== -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/AbilityDef[defName="Axolotl_Flower_SuperSkill"]/verbProperties/verbClass</xpath>
+		<value>
+			<verbClass>Axolotl.Verb_AbilityFlowerJumpCE</verbClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAttributeSet">
+		<xpath>Defs/ThingDef[defName="Axolotl_FlowerSlashCore"]/comps/li[@Class="Axolotl.Compproperties_FlowerSlashCore"]</xpath>
+		<attribute>Class</attribute>
+		<value>Axolotl.Compproperties_FlowerSlashCoreCE</value>
+		
 	</Operation>
 
 	<!-- ==================== 碎石散 (岩) ==================== -->
@@ -178,7 +210,7 @@
 			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 				<damageDef>RangedStab</damageDef>
 				<damageAmountBase>35</damageAmountBase>
-				<speed>50</speed>
+				<speed>110</speed>
 				<armorPenetrationBlunt>80</armorPenetrationBlunt>
 				<armorPenetrationSharp>5</armorPenetrationSharp>
 				<castShadow>false</castShadow>

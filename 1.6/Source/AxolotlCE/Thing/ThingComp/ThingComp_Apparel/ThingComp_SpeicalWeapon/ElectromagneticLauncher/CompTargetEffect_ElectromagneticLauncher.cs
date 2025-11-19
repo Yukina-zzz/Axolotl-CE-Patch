@@ -131,13 +131,13 @@ namespace Axolotl
                             float minDamAmountOnMechBrain = targetBodyPart.def.GetMaxHealth(target);
                             //七分之一的伤害
                             float damAmount = minDamAmountOnMechBrain / Props.DamageToMech.max * Props.DamageToMech.min;
-                            //轰天雷穿透，原2.0f
+                            //CE轰天雷穿透，原2.0f
                             target.TakeDamage(new DamageInfo(DamageDefOf.Crush, damAmount, 100.0f, -1f, user, targetBodyPart, this.parent.def, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true, QualityCategory.Normal, true));
                         }
                         //机械族眩晕
                         //不计算伤害
                         //固定眩晕数值
-                        target.TakeDamage(new DamageInfo(DamageDefOf.EMP, 15f, 2.0f, -1f, user, null, this.parent.def, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true, QualityCategory.Normal, true));
+                        target.TakeDamage(new DamageInfo(DamageDefOf.EMP, 10f, 2.0f, -1f, user, null, this.parent.def, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true, QualityCategory.Normal, true));
                     }
                     catch (Exception e)
                     {
@@ -150,7 +150,7 @@ namespace Axolotl
                     try
                     {
                         float damAmount = this.Props.DamageToNotMech.RandomInRange;
-                        //轰天雷穿透，原0.5f，不过这应该是环境伤害,穿透无所谓
+                        //CE轰天雷穿透，原0.5f，不过这应该是环境伤害,穿透无所谓
                         target.TakeDamage(new DamageInfo(DamageDefOf.Burn, damAmount, 12.0f, -1f, user, null, this.parent.def, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true, QualityCategory.Normal, true));
                         //三分之一的概率点燃对方
                         if (Verse.Rand.Range(0, 3) == 0) target.TryAttachFire(Rand.Range(0.15f, 0.25f), null);
