@@ -10,7 +10,7 @@
 
 	<!-- Patch stats -->
 
-<!-- 仙女棒 -->
+	<!--///锤-->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Axolotl_Hammer"]/tools</xpath>
 		<value>
@@ -31,8 +31,8 @@
 					<capacities>
 						<li>Blunt</li>
 					</capacities>
-					<power>11</power>
-					<cooldownTime>2</cooldownTime>
+					<power>16</power>
+					<cooldownTime>2.15</cooldownTime>
 					<armorPenetrationBlunt>8.75</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
 				</li>
@@ -44,7 +44,7 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_Hammer"]/statBases</xpath>
 		<value>
 			<Bulk>4</Bulk>
-			<MeleeCounterParryBonus>0.15</MeleeCounterParryBonus>
+			<MeleeCounterParryBonus>0.18</MeleeCounterParryBonus>
 		</value>
 	</Operation>
 
@@ -52,8 +52,8 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_Hammer"]</xpath>
 		<value>
 			<equippedStatOffsets>
-				<MeleeCritChance>0.67</MeleeCritChance>
-				<MeleeParryChance>0.15</MeleeParryChance>
+				<MeleeCritChance>0.75</MeleeCritChance>
+				<MeleeParryChance>0.18</MeleeParryChance>
 				<MeleeDodgeChance>0.15</MeleeDodgeChance>
 			</equippedStatOffsets>
 		</value>
@@ -88,25 +88,35 @@
 		<value>
 			<tools>
 				<li Class="CombatExtended.ToolCE">
-					<label>handle</label>
+					<label>Mace handle</label>
 					<capacities>
-						<li>Poke</li>
+						<li>Stab</li>
 					</capacities>
 					<power>6</power>
-					<chanceFactor>0.33</chanceFactor>
-					<cooldownTime>1.39</cooldownTime>
-					<armorPenetrationBlunt>2.225</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.85</armorPenetrationSharp>
+					<chanceFactor>0.1</chanceFactor>
+					<cooldownTime>1.68</cooldownTime>
+					<armorPenetrationBlunt>1.0</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
-					<label>head</label>
+					<label>Mace body</label>
 					<capacities>
 						<li>Blunt</li>
 					</capacities>
-					<power>15</power>
-					<cooldownTime>1.8</cooldownTime>
-					<armorPenetrationBlunt>10.46</armorPenetrationBlunt>
+					<power>20</power>
+					<cooldownTime>2.0</cooldownTime>
+					<armorPenetrationBlunt>10.5</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>Mace tip</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>10</power>
+					<chanceFactor>0.2</chanceFactor>
+					<cooldownTime>1.5</cooldownTime>
+					<armorPenetrationBlunt>4</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -117,7 +127,7 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_Mace"]/statBases</xpath>
 		<value>
 			<Bulk>3.5</Bulk>
-			<MeleeCounterParryBonus>0.24</MeleeCounterParryBonus>
+			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
 		</value>
 	</Operation>
 
@@ -125,10 +135,27 @@
 		<xpath>Defs/ThingDef[defName="Axolotl_Mace"]</xpath>
 		<value>
 			<equippedStatOffsets>
-				<MeleeCritChance>0.35</MeleeCritChance>
-				<MeleeParryChance>0.45</MeleeParryChance>
-				<MeleeDodgeChance>0.05</MeleeDodgeChance>
+				<MeleeCritChance>0.60</MeleeCritChance>
+				<MeleeParryChance>0.40</MeleeParryChance>
+				<MeleeDodgeChance>0.10</MeleeDodgeChance>
 			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Axolotl_Mace"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Axolotl_Mace"]</xpath>
+			<value>
+				<weaponTags />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_Mace"]/weaponTags</xpath>
+		<value>
+			<li>CE_OneHandedWeapon</li>
 		</value>
 	</Operation>
 
@@ -168,8 +195,25 @@
 			<equippedStatOffsets>
 				<MeleeCritChance>0.05</MeleeCritChance>
 				<MeleeParryChance>0.25</MeleeParryChance>
-				<MeleeDodgeChance>0.55</MeleeDodgeChance>
+				<MeleeDodgeChance>0.60</MeleeDodgeChance>
 			</equippedStatOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Axolotl_FeatherFan"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Axolotl_FeatherFan"]</xpath>
+			<value>
+				<weaponTags />
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Axolotl_FeatherFan"]/weaponTags</xpath>
+		<value>
+			<li>CE_OneHandedWeapon</li>
 		</value>
 	</Operation>
 
