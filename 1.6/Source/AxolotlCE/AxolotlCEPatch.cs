@@ -250,4 +250,27 @@ namespace AxolotlCE
                     }
         }
     }
+
+    //萌螈动力装甲起飞技能爆炸穿透
+    [StaticConstructorOnStartup]
+    public static class ExpolstionUtility_Patch_DirectRef
+    {
+        static ExpolstionUtility_Patch_DirectRef()
+        {
+            var targetType = typeof(Axolotl.AxolotlUtility.ExpolstionUtility);
+
+            var field = AccessTools.Field(targetType, "JumpArmorPenetration");
+
+            if (field != null)
+            {
+                // 修改值,原2.0f
+                field.SetValue(null, 100f);
+                Log.Message("[AxolotlCE] 已修改 Axolotl AxolotlUtility ExpolstionUtility JumpArmorPenetration 穿透值");
+            }
+            else
+            {
+                Log.Error("[AxolotlCE] 未找到字段 JumpArmorPenetration");
+            }
+        }
+    }
 }
